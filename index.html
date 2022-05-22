@@ -38,6 +38,16 @@
             --brand-color: #73C1B3;
         }
         
+        input,
+        textarea
+        {
+            border: none;
+            outline: none;
+            font-size: 16px;
+            padding: 0 20px;
+            background: #f5f5f5;
+        }
+        
         ul
         {
             list-style: none;
@@ -49,7 +59,7 @@
             text-decoration: none !important;
         }
         
-        /* Posiitons */
+        /* Positioning */
         .centered
         {
             display: grid;
@@ -77,21 +87,32 @@
         }
         
         /* Headlines */
-        #menu h2,
-        #landing-page h1,
-        .about-us-content h3,
-        .logo-cont span,
-        .newsletter-wrapper h2
+        .dancing-script-font
         {
             font-family: 'Dancing Script', cursive;
             color: var(--grayish-color);
+        }
+        
+        
+/*        !!!!! WRONG SPELLING !!!!!!!! sectiton  -- dses. */
+        .seciton-headline
+        {
+            position: relative;
+            font-size: 3.5em;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            margin-bottom: 2.5rem;
+            color: var(--grayish-color);
+            font-size: ;
+            font-weight: ;
+/*            text-shadow: 2px 1px 1px rgba(0,0,0,.2);*/
+            z-index: 9;
         }
         
         section
         {
             position: relative;
             min-height: 100vh;
-/*            min-height: calc(100vh - 60px);*/
             overflow: hidden;
         }
         
@@ -116,7 +137,7 @@
 /*            !!! des */
             height: 80px;
             height: 100px;
-            color: #9A9A9A;
+/*            height: 60px;*/
             color: #7F7F7F;
             background: #fff;
             box-shadow: 2px 0 3px rgba(69, 70, 82, .8);
@@ -125,11 +146,6 @@
         }
         
         /* Logo */
-        .logo-cont
-        {
-/*            color: #fff;*/
-        }
-        
         .logo-cont span
         {
             font-size: 1.5rem;
@@ -216,9 +232,10 @@
             background-size: cover;
             background-position: center;
 /*            transform: rotateY(180deg);*/
-            animation: blureffect 1.2s ease forwards;
-            filter: blur(10px);
+/*            animation: blureffect 1.2s ease forwards;*/
+/*            filter: blur(10px);*/
         }
+        
         
         #landing-page:before
         {
@@ -229,11 +246,14 @@
             bottom: 0;
             height: 100%;
             width: 50%;
+/*            !!! des */
             background: rgba(0,0,0,.3);
-            background: rgba(115, 193, 179,.6);
+            background: rgba(115, 193, 179,.7);
+            background: rgba(115, 193, 179,.8);
             z-index: 3
         }
         
+/* Background Image Landing Page */
         .landing-page-bg
         {
             position: absolute;
@@ -242,25 +262,33 @@
             width: 100%;
             height: 100%;
             background: url("https://res.cloudinary.com/dxcrd5sos/image/upload/v1652389170/pancakes-with-berries-chocolate-decorated-with-mint-leaf-tasty-breakfast-top-view_1_mspi1s.jpg");
+            background: url("https://res.cloudinary.com/dxcrd5sos/image/upload/v1652808364/pngegg_36_r9p2qb.jpg");
             background-size: cover;
             background-position: center;
-            filter: grayscale(.35);
+            filter: grayscale(.45);
         }
         
-        @keyframes blureffect
+/* Landing Page Png - right */
+        .landig-png
         {
-            to
-            {
-                filter: blur(0);
-            }
+            position: relative;
         }
         
+        .landig-png img
+        {
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            width: ;            
+        }
+        
+/* Landing Page Content (Headline, txt, btns) */
         .landing-content
         {
             display: grid;
-            grid-template-columns: 4fr 8fr;
-/*            grid-template-columns: 8fr 4fr;*/
             grid-template-columns: 6fr 6fr;
+            align-items: center;
             z-index: 9;
         }
         
@@ -287,15 +315,15 @@
             font-size: 1.3em;
             color: var(--grayish-color);
             color: #fff;
-            text-shadow: 1px 1px 2px rgba(0,0,0,.8);
+            text-shadow: 1px 1px 2px rgba(0,0,0,.9);
         }
    
         /* Landing Page Buttons */
         .landing-btns
         {
-            margin-top: 1.5rem;
+            margin-top: 2.5rem;
             justify-content: flex-start;
-            text-shadow: 1px 1px 2px rgba(0,0,0,.8);
+            text-shadow: 1px 1px 2px rgba(0,0,0,.9);
         }
         
         .landing-btn
@@ -303,11 +331,21 @@
 /*            !!! des f-size */
             font-size: 1.1em;
             border: solid var(--brand-color) 2px;
+            border: solid var(--grayish-color) 2px;
             border-radius: 2px;
             padding: .5em 1em;
             color: #fff;
             cursor: pointer;
             transition: .2s;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        }
+        
+        .landing-btn.active
+        {
+/*            border-color: #fff;*/
+            background: var(--brand-color);
+            background: var(--grayish-color);
+            margin-right: .5em;
         }
         
         .landing-btn:hover
@@ -315,21 +353,27 @@
             background: var(--brand-color);
         }
         
-        .landing-btn.active
+        .landing-btn.active:hover
         {
-/*            border-color: #fff;*/
             background: var(--brand-color);
-            margin-right: .5em;
         }
         
-/* Scroll Down To Termine Button */
+/* Scroll Down To Termine Button */        
+        .container.scroll-btn
+        {
+            position: absolute;
+            bottom: 15%;
+            z-index: 99;
+        }
+        
         .scroll-to-termine-btn
         {
             position: absolute;
             cursor: pointer;
-            bottom: 5%;
-            bottom: 10%;
+            width: 2.5rem;
         }
+        
+        
         
         .absolute-link
         {
@@ -338,20 +382,31 @@
             left: 0;
             height: 100%;
             width: 100%;
-            z-index: 9;
+            z-index: 999;
         }
         
-        .scroll-to-termine-btn:before
+        .scroll-to-termine-btn img
         {
             content: '';
             position: absolute;
-            bottom: -4.5rem;
-            left: 25px;
+            bottom: -3.5rem;
+            bottom: -4rem;
+            left: 50%;
             transition: .4s ease-out;
-/*            transform: translateX(-30px);*/
-            height: 50px;
-            width: 3px;
-            background: var(--grayish-color);
+            transform: translateX(-50%);
+/*
+            height: 45px;
+            width: 1.3px;
+*/
+/*            background: var(--grayish-color);*/
+        }
+        
+        .scroll-to-termine-btn img.arrow
+        {
+            position: absolute;
+            left: 50%;
+            bottom: -7.3rem;
+            transform: translateX(-50%) rotate(90deg);
         }
         
         .scroll-to-termine-btn:hover .scroll-to-termine-btn:before
@@ -391,6 +446,7 @@
             width: 100%;
             height: 8%;
             height: 3.5%;
+            pointer-events: none;
         }
         
 /*
@@ -411,7 +467,14 @@
             height: 100%;
             mix-blend-mode: color;
 /*            background: rgba(10, 42, 67, .3);*/
-            z-index: 10000;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+/* Scroll Svg */
+        .scroll-to-termine-btn.about-us
+        {
+            bottom: 2.5%;
         }
         
         #about-us .container
@@ -435,13 +498,13 @@
         .png-cont img
         {
             
-            transform: translateX(0%) scale(.8);
+            transform: translateY(-10%) translateX(0%) scale(.8);
         }
         
         .png-cont img:nth-child(2)
         {
             transform: translate(5%, 70%) scale(.9);
-            transform: translate(-45%, 70%) scale(1.5);
+            transform: translate(-25%, 25%) scale(1.5);
         }
         
 /* Png at the bottom */
@@ -480,10 +543,8 @@
             padding: 8px;
             border-radius: 2px;
             margin-bottom: 5rem;
-/*
             transform-style: preserve-3d;
             transform: perspective(1000px);
-*/
         }
         
         .page
@@ -523,12 +584,14 @@
         {
             position: relative;
             background-color: #F5F5F5;
+            background-color: #fafafa;
             background-size: cover;
 /*            background-image: url("https://res.cloudinary.com/dxcrd5sos/image/upload/v1652644139/pngegg_13_grbkrh.png");*/
-            padding-bottom: 15rem;
+            padding-bottom: 10rem;
             padding-top: 10rem;
         }
         
+/*
         #menu:before
         {
             content: "";
@@ -539,9 +602,10 @@
             position: absolute;
             background-size: cover;
             background-image: url("https://res.cloudinary.com/dxcrd5sos/image/upload/v1652649508/pancakes-with-berries-chocolate-decorated-with-mint-leaf-tasty-breakfast-top-view_Kopie_1_ucbpsj.jpg");
-/*            filter: grayscale(.8) blur(1px);*/
         }
+*/
         
+/*
         #menu:after
         {
             content: "";
@@ -552,7 +616,20 @@
             position: absolute;
             background: rgba(0,0,0,.1);
             background: rgba(245,245,245,.85);
-/*            z-index: 2*/
+        }
+*/
+        
+         .menu-shadow
+/*        #landing-page:after*/
+        {
+            background: linear-gradient(to bottom, #333, transparent);
+            z-index: 10000;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 8%;
+            height: 3.5%;
+            pointer-events: none;
         }
         
 /* Calligraphic Corners */
@@ -564,6 +641,7 @@
             width: 13rem;
             width: 12rem;
             z-index: 9;
+            display: none;
         }
         
         .corner.lt
@@ -602,6 +680,7 @@
         }
         
 /* Headline */
+/*
         #menu h2
         {
             position: relative;
@@ -610,12 +689,44 @@
             margin-bottom: 3.5rem;
             z-index: 9;
         }
+*/
         
         .menu-cont
         {
             flex-direction: column;
             min-height: 100vh;
         }
+        
+        .product-filter-cont
+        {
+            position: relative;
+            color: #000;
+            z-index: 9;
+        }
+        
+/* Product Filters */
+        .product-filter-btn
+        {
+            font-family: 'Dancing Script', cursive;
+            border-radius: 15px;
+            padding: .01rem .8rem;
+            cursor: pointer;
+            font-size: 1.3rem;
+            
+/*            background: var(--grayish-color);*/
+/*            color: #fff;*/
+        }
+        
+        .product-filter-btn.active
+        {
+            
+        }
+        
+        .product-filter-cont span
+        {
+            margin: 0 .1rem;
+        }
+        
         
 /* Products Grid */
         .products
@@ -641,15 +752,18 @@
         
         .card
         {
+            overflow: hidden;
             padding-left: .5rem;
             padding-right: .5rem;
+            box-shadow: rgba(0, 0, 0, 0.6) 0px 3px 8px;
+/*            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;*/
         }
         
         .card-img-top
         {
 /*            !!!! */
             position: relative;
-            height: 8.5rem;
+/*            height: 8.5rem;*/
             margin-top: .5rem;
             margin-bottom: 1rem;
             padding: .3rem;
@@ -667,12 +781,87 @@
             padding-bottom: .5rem;
         }
         
+/* Card Title / Product Name */
         .card-title
         {
+            position: relative;
             font-size: 1.5rem;
             color: var(--grayish-color);
+            background: #fff;
             font-family: 'Dancing Script', cursive;
+            z-index: 3;
         }
+        
+        .card-icon
+        {
+            position: relative;
+            width: 1.6rem;
+            width: 2rem;
+/*            height: rem;*/
+            margin: 0 auto;
+            margin-bottom: .6rem;
+        }
+        
+        .card-icon img
+        {
+            object-fit: cover;
+            height: 2rem;
+        }
+        
+        .card-icon:before,
+        .card-icon:after
+        {
+            position: absolute;
+            top: 50%;
+            height: 1px;
+            width: 3.5rem;
+/*            width: 20%;*/
+            transform: translateY(-50%);
+            background: var(--grayish-color);
+/*            z-index: 0;*/
+        }
+        
+        .card-icon:before
+        {
+            content: "";
+            left: 2.5rem;
+            left: 3rem;
+        }
+        
+        .card-icon:after
+        {
+            content: "";
+            right: 2.5rem;
+            right: 3rem;
+        } 
+        
+        /* Card Title - Lines - */
+/*
+        .card-title:before,
+        .card-title:after
+        {
+            position: absolute;
+            top: 50%;
+            height: 1px;
+            width: 2.5rem;
+            width: 20%;
+            transform: translateY(-50%);
+            background: var(--grayish-color);
+            z-index: 0;
+        }
+        
+        .card-title:before
+        {
+            content: "";
+            left: 1rem;
+        }
+        
+        .card-title:after
+        {
+            content: "";
+            right: 1rem;
+        }  
+*/
         
 /* Information Button - Reveal more info */
         .info-btn
@@ -689,7 +878,7 @@
         
         .info-btn:hover
         {
-            background: var(--brand-color);
+            background: var(--grayish-color);
             color: #fff;
         }
         
@@ -698,8 +887,12 @@
         {
             position: relative;
             margin: 0 auto;
+/*            !!! des */
+            margin-top: 2rem;
+            margin-top: 1.5rem;
             text-align: center;
             background: #fff;
+            color: var(--grayish-color);
             border: none;
             border-radius: 10px;
             width: ;
@@ -718,7 +911,7 @@
         
         .show-more-btn.disabl
         {
-/*            color: lightgray;*/
+            color: lightgray;
             pointer-events: none;
             cursor: not-allowed !important;
         }
@@ -728,10 +921,7 @@
         
         
 /* ABOUT US */
-        #about
-        {
-            
-        }
+        
         
         
         
@@ -744,36 +934,43 @@
         .newsletter-cont
         {
             width: 100%;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,1);
 /*            min-height: 25vh;*/
             background-color: var(--brand-color);
+        }
+        
+/* Newsletter Icon png */
+        .newsletter-txt-cont img
+        {
+            width: 40px;
+            margin-right: 1.5rem;
+            transform: translateY(-.5rem);
         }
         
         .newsletter-wrapper
         {
             display: grid;
             grid-template-columns: 6fr 6fr;
-/*            justify-content: space-between;*/
-/*            align-items: center;*/
             place-items: center;
             flex-wrap: wrap;
             min-height: 20vh;
+            min-height: 15vh;
         }
         
-        .newsletter-header-cont
-        {
-            flex-direction: column;
-        }
-        
+
+/*
         .newsletter-wrapper h2
         {
             font-size: 3.5em;
             align-self: flex-start;
-/*            margin-left: 10%;*/
+            margin-left: 10%;
             color: #fff;
             margin-bottom: 1rem;
             text-shadow: 2px 1px 5px rgba(0,0,0,.8);
         }
         
+*/
 /* Input Fields */
         .newsletter-form form
         {
@@ -783,7 +980,7 @@
         
         .newsletter-form form input[type="email"]
         {
-            width: 14em;
+            width: 20rem;
             border: none;
             outline: none !important;
             border-radius: 3px;
@@ -796,139 +993,731 @@
 /*            padding: .5rem 1.5rem;*/
             background: var(--grayish-color);
             color: #fff;
-/*            border-radiu*/
+/*            border-radius: ;*/
             font-size: 1rem;
             height: 3rem;
+        }
+        
+        .checkbox-cont input[type=checkbox]
+        {
+            vertical-align: middle;
+            margin-bottom: 2.5px;
+        }
+        
+        .checkbox-cont label
+        {
+            font-size: small;
+            font-weight: 300;
+            text-shadow: .5px .5px rgba(0,0,0,1);
+        }
+        
+         
+        #submit_contact
+        {
+            width: 40%;
+            color: #fff;
+            height: auto;
+            padding: 1em;
+            font-size: 1em;
+            transition: .2s;
+            background: transparent;
+            border: solid 2px var(--brand-color);
+        }
+
+        #submit_contact:hover
+        {
+            background: var(--brand-color);
+            text-shadow: 1px 1px 2px rgba(0,0,0,.9);
+        }
+        
+/* CONTACT */
+   
+        #contact
+        {
+            flex-direction: column;
+            background-color: var(--grayish-color);
+            padding-top: 10rem;
+        }
+        
+        .contact-cont
+        {
+            flex-direction: column;
+/*            !!! change evtl */
+            min-height: calc(100vh - 10rem);
+/*            min-height: calc(100vh);*/
+        }
+        
+/* Headline Contact */
+        #contact .seciton-headline
+        {
+            margin-bottom: 0;
+            color: #fff;
+        }
+        
+/* Image next to Contact Form */
+        .contact-img
+        {
+            position: relative;
+        }
+        
+        .contact-img img
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            max-height: 450px;
+        }
+        
+        /* Contact Form */
+        .contact-form
+        {
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+        }
+        
+        .contact-form form
+        {
+            display: flex;
+            flex-direction: column;
+        }
+        
+/* Inputs & Textarea */
+        #name,
+        #email
+        {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        
+        #submit_contact
+        {
+            margin-bottom: 0;
+        }
+        
+        textarea
+        {
+            padding: 20px;
+            min-height: 150px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-form form ul li input
+        {
+            margin-bottom: 10px;
+            border-radius: 2px;
+            box-shadow: ;
+            width: 100%;
+        }
+        
+        .contact-form form ul li textarea
+        {
+            width: 100%;
+        }
+        
+/* Top inputs 50% 50% half width */
+        .contact-form form ul li.half-input
+        {
+            position: relative;
+            width: 49%;
+            float: left;
+            clear: none;
+        }
+        
+/* Pushes top input el. to sthe sides (<- ->) */
+        .contact-form form ul li.half-input:nth-child(2)
+        {
+            float: right;
+            clear: none;
+        }
+        
+       
+        
+/* ABOUT US */
+        
+        #about
+        {
+            padding-top: 10rem;
+        }
+        
+         
+        
+        .owner
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+/*            column-gap: 2.5rem;*/
+            place-items: center;
+/*            justify-content: space-between;*/
+/*            margin-bottom: -2.5rem;*/
+        }
+        
+/* Reverses the order (img/txt) for second element */
+        .owner:nth-child(2) .owner-img
+        {
+            order: 2;
+        }
+        
+/* Owner Image */
+        .owner-img img
+        {
+            height: 280px;
+            height: 300px;
+            border-radius: 50%;
+/*            box-shadow: 2px 2px 5px rgba(0,0,0,.4);*/
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+        
+        .owner-info
+        {
+            padding: 0 1rem;
+        }
+        
+/* Owners Names */
+        .owner-info h3
+        {
+            margin-bottom: 1rem;
+            color: var(--brand-color);
+        }
+        
+        .owner-info p
+        {
+            border-left: var(--brand-color) 3px solid;
+            padding-left: 0.5rem;
+        }
+        
+/* Cooperation Cards */
+        .cooperation-cards
+        {
+            margin-top: 10rem;
+            margin-bottom: 5rem;
+            display: grid;
+            column-gap: 1.5em;
+            column-gap: 2em;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        .cooperation-card
+        {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .cooperation-card .c-icon
+        {
+/*            height: 1rem;*/
+            margin-bottom: 1.5rem;
+        }
+        
+        .cooperation-card .c-icon img
+        {
+            object-fit: cover;
+            height: 4.5em;
+        }
+        
+        .cooperation-card .c-headline
+        {
+            color: var(--brand-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
         
         
         
         
         
-        
-        
-        
-        
-        
-        
-        
 /* FOOTER */
+        footer
+        {
+/*          !!!  des.*/
+            padding-top: 10rem;
+            padding-top: 8rem;
+            padding-bottom: 10rem;
+            min-height: 60vh;
+/*          !!!  des. */
+            font-weight: 300;
+            background-color: var(--brand-color);
+/*            background-color: var(--grayish-color);*/
+            background-position: right;
+            background-size: cover;
+        }
+        
+/* Footer Headline */
+        footer .container h2
+        {
+            color: #fff;
+            margin-bottom: 5rem;
+        }
+        
+/* Contact Icons - Footer */
+        .footer-contact-icons
+        {
+            display: flex;
+            margin-bottom: 2.5rem;
+        }
+        
+        .footer-contact-icons > div
+        {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon
+        {
+            margin-right: 2rem;
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            background: var(--grayish-color);
+            cursor: pointer;
+        }
+        
+        .footer-contact-icons > div:last-child .contact-icon:last-child
+        {
+            margin-right: 0;
+        }
+        
+        .contact-icon img
+        {
+            width: 50%;
+        }
+        
+/* Footer Links */
+        .footer-links ul li a:hover
+        {
+            color: #fff !important;
+        }
+        
+        .footer-links ul span
+        {
+            margin: 0 1rem;
+            cursor: default;
+/*            margin: 0 .5rem;*/
+        }
+        
+        
+        footer .container ul
+        {
+            flex-wrap: wrap;
+        }
+        
+/* Copyright Section */
+        .copyright p
+        {
+            text-align: center;
+        }
+        
     
+        
+        
+        
+/* MEDIA QUERIES */
+        @media only screen and (max-width: 1200px)
+        {
+            .products
+            {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        
+        @media only screen and (max-width: 991px)
+        {
+            /* Landing Page */
+            #landing-page:before
+            {
+                width: 72%;
+            }
+            
+            /* Products */
+            .products
+            {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            /* Contact */
+            .contact-form form ul li.half-input
+            {
+                width: 100%;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 768px)
+        {
+            /* Landing Page */
+            #landing-page:before
+            {
+                width: 78%;
+            }
+            
+            
+            
+            /* Products */
+            
+            
+            
+            /* Contact */
+            .contact-form
+            {
+                grid-template-columns: 1fr;
+                margin-bottom: 2.5rem;
+            }
+            
+            .contact-img
+            {
+                height: 450px;
+            }
+        }
+        
+        @media only screen and (max-width: 767px)
+        {
+            /* Landing Page */
+            
+            #landing-page:before
+            {
+                width: 100%;
+            }
+            
+            .landing-content
+            {
+                grid-template-columns: 1fr;
+            }
+            
+            .landig-png
+            {
+                position: relative;
+                height: 20rem;
+                grid-column-start: 1;
+                grid-row-start: 1;
+            }
+            
+            .landig-png img
+            {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                height: 100%;
+                transform: translate(-50%, -50%);
+                object-fit: cover;
+            }
+            
+            /* Products */
+            .products
+            {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-icon:before,
+            .card-icon:after
+            {
+                width: 500%;
+            }
+        }
+        
+        @media only screen and (max-width: 991px)
+        {
+            /* Newsletter */
+            .newsletter-wrapper
+            {
+                grid-template-columns: 1fr;
+                padding: 2.5rem 0;
+            }
+            
+            .newsletter-txt-cont img
+            {
+                transform: translateY(-1rem);
+            }
+            
+            .newsletter-txt-cont p
+            {
+                margin-bottom: 2rem;
+            }
+            
+            .newsletter-form form input[type="email"]
+            {
+                width: 18rem;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 680px)
+        {
+            .footer-contact-icons
+            {
+                flex-wrap: wrap;
+            }
+            
+            .footer-contact-icons > div:last-child .contact-icon:last-child,
+            .footer-contact-icons > div .contact-icon:last-child
+            {
+                margin-right: 0;
+            }
+        }
+        
+        @media only screen and (max-width: 514px)
+        {
+            .products
+            {
+                padding: 0;
+            }
+            
+            .card-icon:before,
+            .card-icon:after
+            {
+/*                width: 8rem;*/
+                width: 300%;
+            }
+        }
+        
+        
+        
+/*        !!!!!! 3x 420px */
+        @media only screen and (max-width: 420px)
+        {
+            /* Landing Page */
+            .landing-content
+            {
+                font-size: 0.6em;
+            }
+            
+            /* Newsletter */
+            
+        }
+        
+        @media only screen and (max-width: 420px)
+        {
+            /* Newsletter */
+            .newsletter-txt-cont
+            {
+                flex-wrap: wrap;
+                text-align: center;
+/*                !!! des. */
+/*                flex-direction: column-reverse;*/
+            }
+            
+            .newsletter-form form input[type="email"]
+            {
+                width: 100%
+;            }
+        }
+        
+        
+        @media only screen and (max-width: 420px)
+        {
+            /* Products */
+            .card-icon:before,
+            .card-icon:after
+            {
+                width: 200%;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 390px)
+        {
+            .contact-icon
+            {
+                margin-right: 1rem;
+            }
+        }
+        
+        
+/*
+        #menu
+        {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+*/
+        
+/*
+        Mobile
+       
+       {
+           padding: 0 20px;
+       }
+        
+*/
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        @media only screen and (max-width: 1199px)
+        {
+            .contact-form form ul li.half-input
+            {
+                width: 100%;
+            }
+        }
+        
+        
+        
+        
+        @media only screen and (max-width: 680px)
+        {
+            /* Landing Page */
+            .landing-content
+            {
+                margin-top: 3rem;
+                font-size: .9em;
+            }
+            
+            .landig-png
+            {
+                height: 10rem;
+            }
+        }
+        
+        
     </style>
     
 </head>
 <body>
-   
-   <div class="main-cont">
-       <header class="flex-center">
-          <div class="container">
-             <div class="header-content flex-apart">
-                 <div class="logo-cont flex-center">
-               <div class="logo">
-                   <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652295292/cropped-Liebhaberei_Website_Header_Logo_textless_zhnyao.png" alt="logo">
-               </div>
-               <span>Liebhaberei</span>
-           </div>
-           <nav>
-               <ul class="flex-center">
-                   <li><a href="#top-gap">Home</a></li>
-                   <li><a href="#about-us">Termine</a></li>
-                   <li><a href="#menu">Angebot</a></li>
-                   <li><a href="#">Uber Uns</a></li>
-                   <li><a href="#">Kontakt</a></li>
-                   <li class="tel-number"><a href="#">03043698341</a></li>
-               </ul>
-           </nav>
-             </div>
-              
-          </div>
-           
-       </header>
-       <div id="top-gap"></div>
-       <section id="landing-page" class="flex-center">
-        <div class="landing-page-bg"></div>
-         <div class="container">
-             <div class="landing-content">
-<!--             <div></div>-->
-             <div>
-                 <h1>Liebhaberei</h1>
-                 <p class="sub-headline">veganer Foodtruck in München</p>
-               <div class="landing-txt">
-                  <p>
-                      Willkommen bei der Liebhaberei! Bei uns gibt es leckere vegane Crepes mit herzhaften und süssen Füllungen.
-                  </p>
-                  <div class="landing-btns flex-center">
-                      <div class="landing-btn active">
-                         <a href="#menu" class="absolute-link"></a>
-                          Zum Menu
-                      </div>
-                      <div class="landing-btn">
-                         <a href="#contact" class="absolute-link"></a>
-                          Uns Buchen
-                      </div>
-                  </div>
-               </div> 
-             </div>
-             <div></div>
-          </div>
-          
-         </div>
-          <div class="container scroll-to-termine-btn">
-             <a href="#about-us" class="absolute-link"></a>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM64 304C64 312.8 71.16 320 80 320H112C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304zM192 304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304zM336 256C327.2 256 320 263.2 320 272V304C320 312.8 327.2 320 336 320H368C376.8 320 384 312.8 384 304V272C384 263.2 376.8 256 368 256H336zM64 432C64 440.8 71.16 448 80 448H112C120.8 448 128 440.8 128 432V400C128 391.2 120.8 384 112 384H80C71.16 384 64 391.2 64 400V432zM208 384C199.2 384 192 391.2 192 400V432C192 440.8 199.2 448 208 448H240C248.8 448 256 440.8 256 432V400C256 391.2 248.8 384 240 384H208zM320 432C320 440.8 327.2 448 336 448H368C376.8 448 384 440.8 384 432V400C384 391.2 376.8 384 368 384H336C327.2 384 320 391.2 320 400V432z"/></svg>
-              
-              <i class="fa-regular fa-calendar-days"></i>
-          </div>
-           
-       </section>
-       <section id="about-us">
-         <div class="container">
-          <div class="png-cont flex-center">
-             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652537552/kisspng-crpe-pancake-breakfast-food-crepe-maker-5b0f3059018264.2896341415277220730062_1_w4v6xa.png" alt="">
-              <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652463272/kisspng-pancake-crpe-maslenitsa-flavor-degustation-5b3aa947acb538.3578592215305710797074_hzy6ww.png" alt="">
+
+    <div class="main-cont">
+        <header class="flex-center">
+            <div class="container">
+                <div class="header-content flex-apart">
+                    <div class="logo-cont flex-center">
+                        <div class="logo">
+                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652295292/cropped-Liebhaberei_Website_Header_Logo_textless_zhnyao.png" alt="logo">
+                        </div>
+                        <span class="dancing-script-font">Liebhaberei</span>
+                    </div>
+                    <nav>
+                        <ul class="flex-center">
+                            <li><a href="#top-gap">Home</a></li>
+                            <li><a href="#about-us">Termine</a></li>
+                            <li><a href="#menu">Angebot</a></li>
+                            <li><a href="#contact">Kontakt</a></li>
+                            <li><a href="#about">Über Uns</a></li>
+                            <li class="tel-number"><a href="#">03043698341</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
             </div>
-           <div class="about-us-content centered" data-tilt-max="3" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
-               <div class="page first-page">
-                   <h3>Wer Wir Sind</h3>
-                   <div class="about-us-txt">
-                       <p>
-                           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nemo voluptates iusto fuga, est quod soluta, reprehenderit quae culpa sit dignissimos optio? Porro eum quam blanditiis non corporis suscipit ipsa doloribus, deserunt voluptate natus animi labore laboriosam libero consequatur, debitis at pariatur sequi, maxime. <br><br> Blanditiis fugiat, amet laboriosam iste deserunt numquam est consequuntur alias ipsam consequatur beatae culpa quas saepe, quia et dolore cupiditate eos nemo eum illo. Qui sequi modi error, totam eveniet, quae commodi quo nisi. Ipsam saepe itaque tenetur soluta atque sint sapiente molestias consequuntur, doloribus natus voluptatibus officia corrupti nihil, beatae quam omnis nisi debitis aut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br><br>Dicta aut ab velit minus, voluptatibus! Maiores, qui eaque laboriosam sint at provident a praesentium neque debitis, consequuntur numquam, aperiam quas doloremque? Nobis non iste omnis, consequuntur quibusdam accusantium saepe reprehenderi.
-                       </p>
-                       <div class="next-prev-cont">
-                           <div class="prev-btn">
-                               Zuruck
-                           </div>
-                           <div class="next-btn">
-                               Weiter
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652537091/kisspng-pancake-breakfast-cora-food-restaurant-breakfast-5ac224d0de33f4.8377302615226728489102_mjvgwg.png" alt="" class="bottom-png">
-           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652603151/kindpng_4895588_pvgmqp.png" alt="" class="left-bottom-png">
-           </div>
-       </section>
-       <section id="menu">
-         <div class="corner lt">
-             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-         </div>
-         <div class="corner lb">
-             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-         </div>
-         <div class="corner rt">
-             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-         </div>
-         <div class="corner rb">
-             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-         </div>
-          <div class="container">
-             <h2>Unsere Auswahl</h2>
-              <div class="menu-cont">
-           <div class="products">
-                 
-                 
+
+
+        </header>
+        <div id="top-gap"></div>
+        <section id="landing-page" class="flex-center">
+            <div class="landing-page-bg"></div>
+            <div class="container">
+                <div class="landing-content">
+                    <!--             <div></div>-->
+                    <div>
+                        <h1 class="dancing-script-font">Liebhaberei</h1>
+                        <p class="sub-headline">veganer Foodtruck in München</p>
+                        <div class="landing-txt">
+                            <p>
+                                Willkommen bei der Liebhaberei! Bei uns gibt es leckere vegane Crepes mit herzhaften und süssen Füllungen.
+                            </p>
+                            <div class="landing-btns flex-center">
+                                <div class="landing-btn active">
+                                    <a href="#menu" class="absolute-link"></a>
+                                    Zum Menu
+                                </div>
+                                <div class="landing-btn">
+                                    <a href="#contact" class="absolute-link"></a>
+                                    Uns Buchen
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="landig-png"><img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652808507/pngegg_35_eurdcx.png" alt=""></div>
+                </div>
+
+            </div>
+
+            <!--             <a  class="absolute-link"></a>-->
+            <!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. <path d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM64 304C64 312.8 71.16 320 80 320H112C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304zM192 304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304zM336 256C327.2 256 320 263.2 320 272V304C320 312.8 327.2 320 336 320H368C376.8 320 384 312.8 384 304V272C384 263.2 376.8 256 368 256H336zM64 432C64 440.8 71.16 448 80 448H112C120.8 448 128 440.8 128 432V400C128 391.2 120.8 384 112 384H80C71.16 384 64 391.2 64 400V432zM208 384C199.2 384 192 391.2 192 400V432C192 440.8 199.2 448 208 448H240C248.8 448 256 440.8 256 432V400C256 391.2 248.8 384 240 384H208zM320 432C320 440.8 327.2 448 336 448H368C376.8 448 384 440.8 384 432V400C384 391.2 376.8 384 368 384H336C327.2 384 320 391.2 320 400V432z"/></svg>-->
+            <!--             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652668642/calendar_ljqquj.png" alt="">-->
+
+
+            <!--
+           <div class="container scroll-btn">
+            <a href="#about-us" class="scroll-to-termine-btn">
+               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652668642/calendar_ljqquj.png" alt=""> 
+               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652681891/right-arrow_zzhuuv.png" alt="" class="arrow">
+            </a>
+          </div>
+-->
+        </section>
+        <section id="about-us">
+            <div class="container">
+                <!--
+         <a href="#menu" class="scroll-to-termine-btn about-us">
+             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652670064/menu_3_gkbuct.png" alt="">
+         </a>
+-->
+                <div class="png-cont flex-center">
+                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652537552/kisspng-crpe-pancake-breakfast-food-crepe-maker-5b0f3059018264.2896341415277220730062_1_w4v6xa.png" alt="">
+                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652463272/kisspng-pancake-crpe-maslenitsa-flavor-degustation-5b3aa947acb538.3578592215305710797074_hzy6ww.png" alt="">
+                </div>
+                <div class="about-us-content centered" data-tilt-max="3" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
+                    <div class="page first-page">
+                        <h3 class="dancing-script-font">Unsere Events</h3>
+                        <div class="about-us-txt">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nemo voluptates iusto fuga, est quod soluta, reprehenderit quae culpa sit dignissimos optio? Porro eum quam blanditiis non corporis suscipit ipsa doloribus, deserunt voluptate natus animi labore laboriosam libero consequatur, debitis at pariatur sequi, maxime. <br><br> Blanditiis fugiat, amet laboriosam iste deserunt numquam est consequuntur alias ipsam consequatur beatae culpa quas saepe, quia et dolore cupiditate eos nemo eum illo. Qui sequi modi error, totam eveniet, quae commodi quo nisi. Ipsam saepe itaque tenetur soluta atque sint sapiente molestias consequuntur, doloribus natus voluptatibus officia corrupti nihil, beatae quam omnis nisi debitis aut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br><br>Dicta aut ab velit minus, voluptatibus! Maiores, qui eaque laboriosam sint at provident a praesentium neque debitis, consequuntur numquam, aperiam quas doloremque? Nobis non iste omnis, consequuntur quibusdam accusantium saepe reprehenderi.
+                            </p>
+                            <div class="next-prev-cont">
+                                <div class="prev-btn">
+                                    Termine
+                                </div>
+                                <div class="next-btn">
+                                    Location
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652537091/kisspng-pancake-breakfast-cora-food-restaurant-breakfast-5ac224d0de33f4.8377302615226728489102_mjvgwg.png" alt="" class="bottom-png">
+                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652603151/kindpng_4895588_pvgmqp.png" alt="" class="left-bottom-png">
+            </div>
+        </section>
+        <section id="menu">
 <!--
+            <div class="corner lt">
+                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
+            </div>
+            <div class="corner lb">
+                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
+            </div>
+            <div class="corner rt">
+                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
+            </div>
+            <div class="corner rb">
+                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
+            </div>
+-->
+            <div class="container">
+                <h2 class="seciton-headline dancing-script-font">Unsere Auswahl</h2>
+                <div class="product-filter-cont flex-center">
+                    <div class="product-filter-btn">Süss</div>
+                    <span>|</span>
+                    <div class="product-filter-btn">Herzhaft</div>
+                </div>
+                <div class="menu-cont">
+                    <div class="products">
+
+
+                        <!--
                   <div class="product">
                    <div class="product-img">
                        <img src="" alt="">
@@ -941,241 +1730,417 @@
                </div>
                
 -->
-               
-               <div class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top flex-center">
-                          <a href="" class=""></a>
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652463272/kisspng-pancake-crpe-maslenitsa-flavor-degustation-5b3aa947acb538.3578592215305710797074_hzy6ww.png" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">SNICKERS</h5>
-                            <p class="card-text"></p>
-                            <button class="btn info-btn">Mehr Info</button>
+
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652666306/sugar-cube_lvvpqz.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Zucker Zimt</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652675265/apple-sauce_jfuksr.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Apfelmus Zu. Zi.</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652667673/strawberry_tapqyb.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Erdbeere</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652665492/chocolate_qindo0.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Schoko</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652665488/banane_ue8cgz.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Banane Schoko</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652665486/protein-bar_thq9il.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Snikkers-Style</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652665496/peanut-butter_heyp3e.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Erdnussbutter</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652676319/caramel_jftdf8.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Crunchy Caramel</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652676521/plant_mka9ps.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Bärlauch</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652677501/tomatoes_ojmmbd.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Putanesca Tomate/Olive</h5>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652676855/chilli_yqvbm6.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Chilli-Cheese</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
+                            <div class="card">
+                                <div class="card-img-top">
+                                    <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-icon">
+                                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652677016/lentil_ln7jtv.png" alt="">
+                                    </div>
+                                    <h5 class="card-title">Linsen Daal</h5>
+                                    <p class="card-text"></p>
+                                    <div class="btn info-btn">Mehr Info</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="disabl show-more-btn flex-center">Mehr Anzeigen</button>
+            </div>
+
+        </section>
+        <section id="contact">
+            <div class="menu-shadow"></div>
+            <div class="contact-cont flex-apart">
+                
+            
+            <h2 class="seciton-headline dancing-script-font">Fragen/Interesse?</h2>
+            <div class="container">
+                <div class="contact-form">
+                    <div class="contact-img">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652537068/kisspng-blueberry-pie-tart-bread-cake-blueberry-bread-west-point-5a88276c9dd6d6.1052028715188724286465_w6vbzu.png" alt="">
+                    </div>
+                    <form action="">
+                        <ul>
+                            <li class="half-input">
+                                <input type="text" name="name" id="name" placeholder="Name">
+                            </li>
+                            <li class="half-input">
+                                <input type="email" name="email" id="email" placeholder="Email">
+                            </li>
+                            <li>
+                                <textarea name="message" id="message" cols="30" placeholder="Nachricht"></textarea>
+                            </li>
+                            <li>
+                                <input type="submit" name="submit_contact" value="Nachricht Versenden" id="submit_contact">
+                            </li>
+                        </ul>
+
+                    </form>
+                </div>
+            </div>
+            <div class="newsletter-cont">
+                <div class="container">
+                    <div class="newsletter-wrapper">
+                        <div class="newsletter-txt-cont flex-center">
+                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653187926/news_xelrue.png" alt="">
+                            <p>
+                                Trag Dich in unseren Newsletter ein, um immer <br> direkt von neuen Terminen zu erfahren.
+                            </p>
+                        </div>
+                        <div class="newsletter-form">
+                            <form action="">
+                                <div style="display: flex">
+                                    <input type="email" name="email" placeholder="Email hier eintragen">
+                                    <input class="btn" type="submit" value="Newsletter">
+                                </div>
+                                <div class="checkbox-cont">
+                                    <input id="datenschutz" name="datenschutz" type="checkbox">
+                                    <label for="datenschutz">Datenschutzerklärung akzeptieren</label>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
                 </div>
-                
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
+            </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="container">
+               <h2 class="seciton-headline dancing-script-font">Über Uns</h2>
+                <div class="owners-cont">
+                    <div class="owner">
+                        <div class="owner-img">
+                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652963832/Liebhaberei_Team_Bianca-525x600_rym5iy.png" alt="">
+                        </div>
+                        <div class="owner-info">
+                           <h3 class="c-headline dancing-script-font">Bianca</h3>
+                            <p>
+                                Kochen, essen, Gäste verwöhnen – und dabei zeigen, dass Genuss und nachhaltiger Konsum sich nicht ausschließen – das ist meine persönliche Motivation und mein Antrieb. Jeder glückliche und zufriedene Gast zaubert mir ein Lächeln ins Gesicht.
+
+                                Ich freue mich sehr darüber, dass wir mit der Liebhaberei die vegane Essenslandschaft in München erweitern und zeigen können, dass es für ein leckeres Essen keine tierischen Produkte braucht.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="owner">
+                        <div class="owner-img">
+                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652963822/Liebhaberei_Team_Annette-525x600_m9tvoi.png" alt="">
+                        </div>
+                        <div class="owner-info">
+                           <h3 class="c-headline dancing-script-font">Anette</h3>
+                            <p>
+                                Foodtruck Gastronomie in allen ihren besonderen und einzigartigen Erscheinungsformen begeistert mich auf Reisen wie zuhause seit jeher. Ich bin überglücklich, nun zusammen mit Bianca und der Liebhaberei ein Teil davon zu sein und mein Lieblings-Streetfood auf eine neue Ebene bringen zu dürfen. Crȇpes funktionieren vegan – das ist klar – und sie setzen der Kreativität keine Grenzen – genauso wünsche ich es mir.
+                            </p>
                         </div>
                     </div>
                 </div>
-                
-                
-               <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
+                <div class="cooperation-cards">
+                    <div class="cooperation-card">
+                        <div class="c-icon">
+                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653066484/cheers_p66s6j.png" alt="">
+                        </div>
+                        <h3 class="c-headline dancing-script-font">Private Events</h3>
+                        <div class="c-txt">
+                            <p>
+                                Ihr sucht noch eine kulinarische Ergänzung für eure Hochzeit, Gartenparty oder Omas runden Geburtstag? Meldet euch gerne. Auf Wunsch gestalten wir unsere Standfront mit euren Fotos oder Schriftzügen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cooperation-card">
+                        <div class="c-icon">
+                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653066060/stall_my5bdc.png" alt="">
+                        </div>
+                        <h3 class="c-headline dancing-script-font">Feste &amp; Märkte</h3>
+                        <div class="c-txt">
+                            <p>
+                                Ihr organisiert ein Festival und sucht noch eine vegane Ergänzung im Standportfolio? Ihr wollt euren Wochenmarkt mit einem leckeren Essensangebot ergänzen? Euer Nachtflohmarkt braucht noch ein kulinarisches Angebot? Gerne sind wir vor Ort und verwöhnen eure Besucher.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cooperation-card">
+                        <div class="c-icon">
+                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653066339/employee_fhxx9k.png" alt="">
+                        </div>
+                        <h3 class="c-headline dancing-script-font">Firmenfeiern</h3>
+                        <div class="c-txt">
+                            <p>
+                                Das Firmenjubiläum findet draußen statt und statt Catering wird es dieses Mal Foodtrucks geben? Für den Workshop benötigt ihr noch ein innovatives und attraktives Essensangebot? Wir sind gerne vor Ort dabei und verpflegen eure Mitarbeiter*innen.
+                            </p>
                         </div>
                     </div>
                 </div>
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
-                        </div>
+            </div>
+
+        </section>
+        <footer id="footer">
+           <div class="container">
+               <h2 class="seciton-headline dancing-script-font">Folgt Uns</h2>
+            <div class="footer-contact-icons flex-center">
+                <div>
+                    <div class="contact-icon flex-center">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653176420/facebook_2_fmzowa.png" alt="">
+                    </div>
+                    <div class="contact-icon flex-center">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653154762/instagram_1_hb1fpv.png" alt="">
+                    </div>
+                    <div class="contact-icon flex-center">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653157482/telephone_ah9uao.png" alt="">
                     </div>
                 </div>
-                
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
-                        </div>
+                <div>
+                   <div class="contact-icon flex-center">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653154763/email_1_dppq3w.png" alt="">
+                    </div>
+                    <div class="contact-icon flex-center">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653175366/calendar_2_omtklf.png" alt="">
+                    </div>
+                    <div class="contact-icon flex-center">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653154763/news_1_ee2wvj.png" alt="">
                     </div>
                 </div>
-                
-                
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-                <div data-tilt class="card-wrapper">
-                    <div class="card">
-                       <div class="card-img-top">
-                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
-                       </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Snickers</h5>
-                            <p class="card-text"></p>
-                            <div class="btn info-btn">Mehr Info</div>
-                        </div>
-                    </div>
-                </div>
-               
-              </div>  
+            </div>
+            <div class="footer-links">
+                <ul class="flex-center">
+                    <li><a href="#top-space">Home</a></li>
+                    <span>|</span>
+                    <li><a href="#about-us">Temine</a></li>
+                    <span>|</span>
+                    <li><a href="#contact">Kontakt</a></li>
+                    <span>|</span>
+                    <li><a href="#about">Uber Uns</a></li>
+                    <span>|</span>
+                    <li><a href="#">Impressum</a></li>
+                </ul>
+            </div>
+            <div class="copyright flex-center">
+                <p>
+                    Copyright &copy; 2022 by Liebhaberei.net Design & Code by Robert Machamud
+                </p>
+            </div>
            </div>
-             <button class="disabl show-more-btn flex-center">Mehr Anzeigen</button>
-              </div>
-           
-       </section>
-       <section id="contact">
-          <div class="newsletter-cont">
-             <div class="container">
-                 <div class="newsletter-wrapper">
-                    <div class="newsletter-header-cont flex-center">
-                       <h2>Newsletter</h2>
-                        <p>
-                            Trag Dich in unseren Newsletter ein, um immer <br> direkt von neuen Terminen zu erfahren.
-                        </p>
-                    </div>
-              <div class="newsletter-form">
-                  <form action="">
-                     <div style="display: flex">
-                         <input type="email" name="email" placeholder="Email hier eintragen">
-                      <input class="btn" type="submit" value="Abonnieren">
-                     </div>
-                     <div class="checkbox-cont">
-                         <input id="datenschutz" name="datenschutz" type="checkbox">
-                         <label for="datenschutz">Datenschutzerklärung akzeptieren</label>
-                     </div>
-                     
-                  </form>
-              </div>
-                 </div>
-             </div>
-              
-          </div>
-           
-       </section>
-       <footer id="footer">
-        <div class="footer-top">
-            <form action="">
-                 
-            </form>
-        </div>
-         <div class="footer-bottom">
-             <div>2022&copy; LIEBHABEREI</div>
-           <div class="social-media-cont">
-               <div class="social-icon">
-                   
-               </div>
-               
-           </div>
-         </div>
-       </footer>
-   </div>
+        </footer>
+    </div>
     
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js" integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="vanilla-tilt.js"></script>
+    
+    
     <script>
-    
+        
+        
 //            VanillaTilt.init(document.querySelector(".about-us-txt"));
-    
         
         
+// ----------------------------------------------------------- DOM VARIABLES
+        
+        const mainHeadline = document.querySelector(".landing-content div h1");
+        const subHeadline = document.querySelector(".sub-headline");
+        const landingTxt = document.querySelector(".landing-content div p");
+        const leftLandingBtn = document.querySelector(".landing-btn.active");
+        const rightLandingBtn = document.querySelector(".landing-btn");
+        const landingBanner = document.querySelector("#landing-page:before");
+        
+        const tl = new TimelineMax();
+//        console.log(tl)
+        
+//        tl.fromTo(mainHeadline, 0.5, { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.5");
+        
+        
+        tl.fromTo(subHeadline, 0.5, { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.5");
         
         
         
@@ -1185,6 +2150,9 @@
         // icons nav in every section (weiter) - readme: consistent, user friendly, intuitive. same icons as in mobiele nav menu
         //
         
+        
+        
+        // arrow btns -> appear when scroll on #menu - up -> scrolls to top of #menu / bottom -> scrolls to maybe absolute el. fixed at bottom of #menu
         
     </script>
 </body>
