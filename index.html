@@ -38,6 +38,11 @@
             --brand-color: #73C1B3;
         }
         
+        .d-none
+        {
+            display: none !important;
+        }
+        
         input,
         textarea
         {
@@ -124,6 +129,16 @@
             min-height: 100vh;
         }
         
+        /* Padding T./B. of most of the secitons */
+        #menu,
+        #contact,
+        #about,
+        footer
+        {
+            padding-top: 7rem;
+            padding-bottom: 7rem;
+        }
+        
         
 /* HEADER */
         
@@ -158,6 +173,12 @@
         }
         
         /* Navigation Links */
+        .menu-icon
+        {
+            width: 2rem;
+            margin-right: 1rem;
+        }
+        
         nav ul
         {
             margin: 0;
@@ -170,7 +191,7 @@
             padding: 0;
         }
         
-        nav ul li
+        .header-content nav ul li
         {
             position: relative;
 /*            !!! des */
@@ -178,7 +199,8 @@
 /*            margin-right: 1.5rem;*/
         }
         
-        nav ul li:last-child
+        /* Telephone nr. */
+        .header-content nav ul li:last-child
         {
             margin-right: 0;
             padding: 1px 10px;
@@ -188,18 +210,19 @@
             cursor: pointer;
         }
         
-        nav ul li:last-child:hover
+        .header-content nav ul li:last-child:hover
         {
             background: var(--brand-color);
         }
         
-        nav ul li:last-child a
+        .header-content nav ul li:last-child a
         {
             color: #fff !important;
             font-size: small;
         }
         
-        nav ul li:before
+/*        */
+        .header-content nav ul li:before
         {
             content: '';
             position: absolute;
@@ -210,10 +233,188 @@
             background: var(--grayish-color);
         }
         
-        nav ul li:hover nav ul li:before
+        .header-content nav ul li:hover nav ul li:before
         {
             width: 100%;
         }
+        
+        
+        
+/* COLLAPSED HEADER */
+        
+        .collapsed-header
+        {
+            justify-content: space-between;
+        }
+        
+        /* Menu Button */
+        .menu-btn
+        {
+            position: relative;
+            height: 30px;
+            height: 25px;
+            width: 40px;
+            cursor: pointer;
+            z-index: 9999990;
+        }
+
+        /* Burger Lines */
+        .menu-btn .line
+        {
+            position: absolute;
+            background: var(--grayish-color);
+            width: 100%;
+            height: 3.5px;
+            -webkit-transition: .2s ease-out;
+            -o-transition: .2s ease-out;
+            transition: .2s ease-out;
+            border-radius: 5px;
+        }
+
+        .menu-btn .line.f
+        {
+            top: 0;
+        }
+
+        .menu-btn .line.f.to-cross
+        {
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%) rotate(45deg);
+                -ms-transform: translate(-50%, -50%) rotate(45deg);
+                    transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .menu-btn .line.s
+        {
+            top: 50%;
+            -webkit-transition: .1s;
+            -o-transition: .1s;
+            transition: .1s;
+            -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+        }
+
+        .menu-btn .line.s.to-cross
+        {
+            opacity: 0;
+        }
+
+        .menu-btn .line.l
+        {
+            bottom: 0;
+        }
+
+        .menu-btn .line.l.to-cross
+        {
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+                -ms-transform: translate(-50%, -50%) rotate(-45deg);
+                    transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        
+/* SLIDE IN MENU */
+        
+        .slide-in-bg
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+        
+        .slide-in-navs
+        {
+            position: fixed;
+            top: 0;
+            right: -110%;
+            width: 60%;
+            opacity: 0;
+            height: 100vh;
+            padding-left: 15%;
+/*            !!! des. */
+/*
+            padding-top: 10rem;
+            padding-top: 15rem;
+*/
+            background: var(--grayish-color);
+            z-index: 99999;
+            -webkit-box-shadow: -2px 10px 10px rgba(0,0,0,.4);
+                    box-shadow: -2px 10px 10px rgba(0,0,0,.4);
+        }
+
+        
+        /* Animation for Slide in Menu */
+        .slide-in-navs.slide-ani
+        {
+            -webkit-animation: slide-ani .2s forwards;
+                    animation: slide-ani .2s forwards;
+        }
+
+        /* Menu slides in smoothly - from right to left */
+        @-webkit-keyframes slide-ani
+        {
+            to
+            {
+                opacity: 1;
+                right: 0;
+            }
+        }
+        @keyframes slide-ani
+        {
+            to
+            {
+                opacity: 1;
+                right: 0;
+            }
+        }
+        
+        /* Slide In Navs */
+        .slide-in-navs nav ul li
+        {
+            position: relative;
+            height: 12vh;
+            font-size: 1.3em;
+        }
+
+        .slide-in-navs nav ul li a
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            color: #fafafa !important;
+            font-size: 1em;
+/*            !!! des. */
+            font-size: 1.2em;
+            letter-spacing:1.5px;
+/*            letter-spacing: 2px;*/
+/*            text-transform: uppercase;*/
+        }
+
+        /* Menu navs HOVER */
+        .slide-in-navs nav ul li a:hover
+        {
+            color: var(--redish-color);
+        }
+
+        /* Menu navs links */
+        .slide-in-navs nav ul li a
+        {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+        }
+
         
         
 /* LANDIGN PAGE */
@@ -538,6 +739,7 @@
         
         .about-us-content
         {
+            position: relative;
             background: #fff;
             margin-top: 20vh;
             padding: 8px;
@@ -545,6 +747,7 @@
             margin-bottom: 5rem;
             transform-style: preserve-3d;
             transform: perspective(1000px);
+            z-index: 99;
         }
         
         .page
@@ -587,8 +790,6 @@
             background-color: #fafafa;
             background-size: cover;
 /*            background-image: url("https://res.cloudinary.com/dxcrd5sos/image/upload/v1652644139/pngegg_13_grbkrh.png");*/
-            padding-bottom: 10rem;
-            padding-top: 10rem;
         }
         
 /*
@@ -926,7 +1127,11 @@
         
         
         
-        
+        .slide-in-navs nav
+        {
+            width: 100%;
+            
+        }
         
         
         
@@ -1020,6 +1225,7 @@
             padding: 1em;
             font-size: 1em;
             transition: .2s;
+            margin-top: 10px;
             background: transparent;
             border: solid 2px var(--brand-color);
         }
@@ -1034,22 +1240,23 @@
    
         #contact
         {
+            padding-bottom: 0 !important;
             flex-direction: column;
             background-color: var(--grayish-color);
-            padding-top: 10rem;
         }
         
         .contact-cont
         {
             flex-direction: column;
 /*            !!! change evtl */
-            min-height: calc(100vh - 10rem);
+            min-height: calc(100vh - 7rem);
 /*            min-height: calc(100vh);*/
         }
         
 /* Headline Contact */
         #contact .seciton-headline
         {
+            margin-bottom: 1.5rem;
             margin-bottom: 0;
             color: #fff;
         }
@@ -1138,7 +1345,7 @@
         
         #about
         {
-            padding-top: 10rem;
+            
         }
         
          
@@ -1147,10 +1354,9 @@
         {
             display: grid;
             grid-template-columns: 1fr 1fr;
-/*            column-gap: 2.5rem;*/
             place-items: center;
-/*            justify-content: space-between;*/
-/*            margin-bottom: -2.5rem;*/
+/*            margin-bottom: 1.5rem;*/
+            margin-bottom: 1rem;
         }
         
 /* Reverses the order (img/txt) for second element */
@@ -1165,7 +1371,6 @@
             height: 280px;
             height: 300px;
             border-radius: 50%;
-/*            box-shadow: 2px 2px 5px rgba(0,0,0,.4);*/
             box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
         }
         
@@ -1232,9 +1437,6 @@
         footer
         {
 /*          !!!  des.*/
-            padding-top: 10rem;
-            padding-top: 8rem;
-            padding-bottom: 10rem;
             min-height: 60vh;
 /*          !!!  des. */
             font-weight: 300;
@@ -1288,6 +1490,12 @@
         .footer-links ul li a:hover
         {
             color: #fff !important;
+            text-shadow: .5px .5px rgba(0,0,0,1);
+        }
+        
+        .footer-links ul li:last-child a:hover
+        {
+            text-decoration: underline !important;
         }
         
         .footer-links ul span
@@ -1297,39 +1505,122 @@
 /*            margin: 0 .5rem;*/
         }
         
+        .footer-links ul li
+        {
+            white-space: nowrap;
+        }
         
         footer .container ul
         {
-            flex-wrap: wrap;
+/*            flex-wrap: wrap;*/
+/*            flex-direction: column;*/
         }
         
 /* Copyright Section */
         .copyright p
         {
+            margin-top: 1.5rem;
             text-align: center;
         }
         
+        .copyright p a:hover
+        {
+            color: #fff !important;
+            text-decoration: underline !important;
+        }
     
+        footer .container .logo
+        {
+            height: 4rem;
+            width: 4rem;
+            border-radius: 50%;
+            margin: 3.5rem auto;
+            background: linear-gradient(225deg, #68aea1, #7bcfc0);
+            box-shadow:  -8px 8px 16px #5fa095,
+             8px -8px 16px rgba(135, 226, 209, .9);
+/*                #87e2d1;*/
+        }
         
         
         
 /* MEDIA QUERIES */
         @media only screen and (max-width: 1200px)
         {
+            /* Events */
+            .left-bottom-png
+            {
+                left: 10%;
+                bottom: -50%;
+            }
+            
+            .
+            {
+                bottom: -18%;
+            }
+            
+            /* Products */
             .products
             {
                 grid-template-columns: 1fr 1fr 1fr;
             }
         }
         
+        @media only screen and (max-width: 1199px)
+        {
+            /* Contact */
+            .contact-form form ul li.half-input
+            {
+                width: 100%;
+            }
+        }
+        
+        
         @media only screen and (max-width: 991px)
         {
+            /* Sections */
+            #menu,
+            #contact,
+            #about,
+            footer
+            {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+            
+            /* Header */
+            header
+            {
+                height: 80px;
+            }
+            
             /* Landing Page */
             #landing-page:before
             {
                 width: 72%;
             }
             
+            /* Events */
+            #about-us .container
+            {
+                grid-template-columns: 2fr 10fr;
+            }
+            
+            #about-us img:first-child
+            {
+                transform: translateY(-100%) translateX(-25%) scale(2);
+            }
+            
+            .png-cont img:nth-child(2)
+            {
+                transform: translate(-35%, 210%) scale(2.5);
+            }
+            
+            .left-bottom-png
+            {
+                left: -15%;
+                bottom: -45%;
+            }
+                        
             /* Products */
             .products
             {
@@ -1337,9 +1628,123 @@
             }
             
             /* Contact */
+            #contact .seciton-headline
+            {
+                margin-bottom: 1.5rem;
+            }
+            
             .contact-form form ul li.half-input
             {
                 width: 100%;
+            }
+            
+            .contact-img
+            {
+                height: 20rem;
+            }
+            
+            .contact-img img
+            {
+                height: 100%;
+            }
+            
+            .checkbox-cont
+            {
+                margin-top: 1rem;
+            }
+            
+            .contact-cont
+            {
+                min-height: calc(100vh - 6rem);
+            }
+            
+            /* About */
+            .owner
+            {
+/*                !!! des. */
+                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            /* Footer */
+            footer
+            {
+                padding-bottom: 3rem;
+            }
+        }
+        
+        
+        
+        
+        
+        
+/*
+        @media only screen and (min-width: 769px) and (max-width: 991px)
+        {
+            
+        }
+*/
+        
+        @media only screen and (min-width: 992px)
+        {
+            /* Header */
+            .collapsed-header
+            {
+                display: none !important;
+            }
+            
+            .slide-in-navs
+            {
+                display: none;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 991px)
+        {
+            /* Header */
+            .header-content
+            {
+                display: none;
+            }
+
+            /* About */
+            .cooperation-cards
+            {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            /* Contact */
+            .contact-cont > .container
+            {
+                padding-bottom: 1.5rem;
+            }
+            
+            #submit_contact
+            {
+                width: 60%;
+            }
+            
+            /* Newsletter */
+            .newsletter-wrapper
+            {
+                grid-template-columns: 1fr;
+                padding: 2.5rem 0;
+            }
+            
+            .newsletter-txt-cont img
+            {
+                transform: translateY(-1rem);
+            }
+            
+            .newsletter-txt-cont p
+            {
+                margin-bottom: 2rem;
+            }
+            
+            .newsletter-form form input[type="email"]
+            {
+                width: 18rem;
             }
         }
         
@@ -1364,20 +1769,17 @@
                 grid-template-columns: 1fr;
                 margin-bottom: 2.5rem;
             }
-            
-            .contact-img
-            {
-                height: 450px;
-            }
         }
+        
+
         
         @media only screen and (max-width: 767px)
         {
             /* Landing Page */
-            
             #landing-page:before
             {
                 width: 100%;
+                background: rgba(115, 193, 179,.7);
             }
             
             .landing-content
@@ -1403,6 +1805,13 @@
                 object-fit: cover;
             }
             
+            /* Events */
+            #about-us .container
+            {
+                grid-template-columns: 0fr 12fr;
+                column-gap: 0;
+            }
+            
             /* Products */
             .products
             {
@@ -1414,36 +1823,44 @@
             {
                 width: 500%;
             }
-        }
-        
-        @media only screen and (max-width: 991px)
-        {
-            /* Newsletter */
-            .newsletter-wrapper
+            
+            /* About */
+            .cooperation-cards
             {
                 grid-template-columns: 1fr;
-                padding: 2.5rem 0;
             }
             
-            .newsletter-txt-cont img
+            .cooperation-card
             {
-                transform: translateY(-1rem);
+                margin-bottom: 2.5rem;
             }
             
-            .newsletter-txt-cont p
+            /* About */
+            .owner
             {
-                margin-bottom: 2rem;
+                grid-template-columns: 1fr;
             }
             
-            .newsletter-form form input[type="email"]
+            .owner:first-child
             {
-                width: 18rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .owner:nth-child(2) .owner-img
+            {
+                order: 0;
+            }
+            
+            .cooperation-cards
+            {
+                margin-top: 6rem;
             }
         }
         
         
         @media only screen and (max-width: 680px)
         {
+            /* Footer */
             .footer-contact-icons
             {
                 flex-wrap: wrap;
@@ -1456,8 +1873,59 @@
             }
         }
         
+        
+        @media only screen and (max-width: 680px)
+        {
+            .slide-in-navs
+            {
+                width: 100%;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: end;
+                    -ms-flex-align: end;
+                align-items: flex-end;
+                padding-bottom: 20%;
+                padding-left: 25%;
+            }
+
+            .slide-in-navs nav
+            {
+                width: 100%;
+            }
+            
+            /* Landing Page */
+            .landing-content
+            {
+                margin-top: 3rem;
+                font-size: .9em;
+            }
+            
+            .landig-png
+            {
+                height: 10rem;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 575px)
+        {
+            .seciton-headline
+            {
+                font-size: 3em;
+            }
+        }
+        
+        
         @media only screen and (max-width: 514px)
         {
+            /* Landing Page */
+            .landing-btn
+            {
+                width: 100%;
+            }
+            
+            /* Products */
             .products
             {
                 padding: 0;
@@ -1469,59 +1937,197 @@
 /*                width: 8rem;*/
                 width: 300%;
             }
+            
+            /* Contact */
+            #submit_contact
+            {
+                width: 60%;
+            }
+            
+            /* Footer */
+            footer .container ul
+            {
+                font-size: small;
+            }
         }
         
         
         
-/*        !!!!!! 3x 420px */
         @media only screen and (max-width: 420px)
         {
+            /* Header/Nav */
+            .logo
+            {
+/*                !!! des. */
+                width: 40px;
+            }
+            
+            .slide-in-navs nav ul li a
+            {
+                font-size: 1em;
+            }
+            
             /* Landing Page */
             .landing-content
             {
-                font-size: 0.6em;
+                font-size: 0.85em;
             }
             
-            /* Newsletter */
-            
-        }
-        
-        @media only screen and (max-width: 420px)
-        {
-            /* Newsletter */
-            .newsletter-txt-cont
-            {
-                flex-wrap: wrap;
-                text-align: center;
-/*                !!! des. */
-/*                flex-direction: column-reverse;*/
-            }
-            
-            .newsletter-form form input[type="email"]
-            {
-                width: 100%
-;            }
-        }
-        
-        
-        @media only screen and (max-width: 420px)
-        {
             /* Products */
             .card-icon:before,
             .card-icon:after
             {
                 width: 200%;
             }
+            
+            /* Contact */
+            #submit_contact
+            {
+                width: 100%;
+            }
+            
+            .contact-cont .container
+            {
+                padding: 0;
+            }
+            
+            /* Newsletter */
+            .newsletter-txt-cont
+            {
+                flex-wrap: wrap;
+                text-align: center;
+            }
+            
+            .newsletter-form form input[type="email"]
+            {
+                width: 100%
+;            }
+            
+            .newsletter-txt-cont > div
+            {
+                width: 100%;
+            }
+            
+            .newsletter-txt-cont div img
+            {
+                transform: translate(0);
+                margin: 0 auto;
+                margin-bottom: 1rem;
+            }
+            
+            /* Footer */
+            footer .container ul
+            {
+                flex-direction: column;  
+                font-size: 1rem;
+            }
+            
+            footer .container ul span
+            {
+                margin: .5rem;
+            }
+            
+            .copyright
+            {
+                font-size: small;
+                margin-top: 2.5rem;
+            }
         }
         
         
         @media only screen and (max-width: 390px)
         {
+            .seciton-headline
+            {
+                font-size: 2.5em;
+            }
+            
             .contact-icon
             {
                 margin-right: 1rem;
             }
+            
+            .landing-content div h1
+            {
+                font-size: 5.5em;
+            }
         }
+        
+        
+        @media only screen and (max-width: 360px)
+        {
+            /* Landing Page */
+            .landing-content
+            {
+                font-size: .75em;
+            }
+            
+            .landing-btn
+            {
+                font-size: 1.3em;
+            }
+            
+            /* Newsletter */
+            .newsletter-wrapper
+            {
+                padding: 1.5rem .5rem;
+            }
+            
+            .newsletter-txt-cont p
+            {
+                font-size: .85rem;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 305px)
+        {
+            /* Landing Page */
+            .landing-content
+            {
+                font-size: .65em;
+            }
+        }
+        
+        
+/* LANDSCAPE */
+        
+        @media only screen and (orientation: landscape) and (max-width: 991px) 
+        {
+            /* Header/Navs */
+            header
+            {
+                height: 60px;
+            }
+
+            #top-space
+            {
+                height: 60px;
+            }
+
+            .slide-in-navs
+            {
+                width: 65%;
+                padding-top: 12%;
+                padding-left: 15%;
+                padding-bottom: 2.5%;
+                padding-bottom: .5%;
+            }
+
+            .slide-in-navs nav ul li
+            {
+                margin-bottom: .5rem;
+                font-size: .9em;
+            }
+            
+            .landing-btns
+            {
+                margin-bottom: 2.5rem;
+            }
+        }
+        
+        
+        
         
         
 /*
@@ -1541,6 +2147,9 @@
         
 */
         
+    
+
+
         
         
         
@@ -1556,31 +2165,10 @@
         
         
         
-        @media only screen and (max-width: 1199px)
-        {
-            .contact-form form ul li.half-input
-            {
-                width: 100%;
-            }
-        }
         
         
         
         
-        @media only screen and (max-width: 680px)
-        {
-            /* Landing Page */
-            .landing-content
-            {
-                margin-top: 3rem;
-                font-size: .9em;
-            }
-            
-            .landig-png
-            {
-                height: 10rem;
-            }
-        }
         
         
     </style>
@@ -1593,9 +2181,9 @@
             <div class="container">
                 <div class="header-content flex-apart">
                     <div class="logo-cont flex-center">
-                        <div class="logo">
+                        <a href="#" class="logo">
                             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652295292/cropped-Liebhaberei_Website_Header_Logo_textless_zhnyao.png" alt="logo">
-                        </div>
+                        </a>
                         <span class="dancing-script-font">Liebhaberei</span>
                     </div>
                     <nav>
@@ -1609,11 +2197,78 @@
                         </ul>
                     </nav>
                 </div>
-
+                <div class="collapsed-header flex-center">
+                   <div class="logo-cont flex-center">
+                        <a href="#" class="logo">
+                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652295292/cropped-Liebhaberei_Website_Header_Logo_textless_zhnyao.png" alt="logo">
+                        </a>
+                        <span class="dancing-script-font">Liebhaberei</span>
+                    </div>
+                    <div class="menu-btn">
+                        <div onclick="toggleSlideInMenu()" class="menu-btn">
+                        <div class="line f"></div>
+                        <div class="line s"></div>
+                        <div class="line l"></div>
+                    </div>
+                    </div>
+                </div>
             </div>
-
-
         </header>
+        <div onclick="toggleSlideInMenu()" class="slide-in-bg d-none"></div>
+        <div class="slide-in-navs flex-center">
+            <nav>
+                <ul>
+                    <li onclick="toggleSlideInMenu()">
+                        <a href="#top-space">
+                            <div class="menu-icon">
+                                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653361302/home_1_wtfexr.png" alt="">
+                            </div>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li onclick="toggleSlideInMenu()">
+                        <a href="#about-us">
+                            <div class="menu-icon">
+                                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653360318/calendar_3_pq5iod.png" alt="">
+                            </div>
+                            <span>Termine</span>
+                        </a>
+                    </li>
+                    <li onclick="toggleSlideInMenu()">
+                        <a href="#menu">
+                            <div class="menu-icon">
+                                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653361185/menu_5_gcyq1t.png" alt="">
+                            </div>
+                            <span>Angebot</span>
+                        </a>
+                    </li>
+                    <li onclick="toggleSlideInMenu()">
+                        <a href="#contact">
+                            <div class="menu-icon">
+                                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653360759/mail_wy7sos.png" alt="">
+                            </div>
+                            <span>Kontakt</span>
+                        </a>
+                    </li>
+                    <li onclick="toggleSlideInMenu()">
+                        <a href="#about">
+                            <div class="menu-icon">
+                                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653443574/vegan_3_t4dbm5.png" alt="">
+                            </div>
+                            <span>Über Uns</span>
+                        </a>
+                    </li>
+                    <li onclick="toggleSlideInMenu()">
+                        <a href="tel:+15204544868">
+                            <div class="menu-icon">
+                                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653444013/telephone_1_f9krka.png" alt="">
+                            </div>
+                            <span>Telefon</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <div id="top-gap"></div>
         <section id="landing-page" class="flex-center">
             <div class="landing-page-bg"></div>
@@ -1628,11 +2283,11 @@
                                 Willkommen bei der Liebhaberei! Bei uns gibt es leckere vegane Crepes mit herzhaften und süssen Füllungen.
                             </p>
                             <div class="landing-btns flex-center">
-                                <div class="landing-btn active">
+                                <div class="landing-btn flex-center active">
                                     <a href="#menu" class="absolute-link"></a>
                                     Zum Menu
                                 </div>
-                                <div class="landing-btn">
+                                <div class="landing-btn flex-center">
                                     <a href="#contact" class="absolute-link"></a>
                                     Uns Buchen
                                 </div>
@@ -1644,27 +2299,10 @@
 
             </div>
 
-            <!--             <a  class="absolute-link"></a>-->
-            <!--              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. <path d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM64 304C64 312.8 71.16 320 80 320H112C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304zM192 304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304zM336 256C327.2 256 320 263.2 320 272V304C320 312.8 327.2 320 336 320H368C376.8 320 384 312.8 384 304V272C384 263.2 376.8 256 368 256H336zM64 432C64 440.8 71.16 448 80 448H112C120.8 448 128 440.8 128 432V400C128 391.2 120.8 384 112 384H80C71.16 384 64 391.2 64 400V432zM208 384C199.2 384 192 391.2 192 400V432C192 440.8 199.2 448 208 448H240C248.8 448 256 440.8 256 432V400C256 391.2 248.8 384 240 384H208zM320 432C320 440.8 327.2 448 336 448H368C376.8 448 384 440.8 384 432V400C384 391.2 376.8 384 368 384H336C327.2 384 320 391.2 320 400V432z"/></svg>-->
-            <!--             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652668642/calendar_ljqquj.png" alt="">-->
-
-
-            <!--
-           <div class="container scroll-btn">
-            <a href="#about-us" class="scroll-to-termine-btn">
-               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652668642/calendar_ljqquj.png" alt=""> 
-               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652681891/right-arrow_zzhuuv.png" alt="" class="arrow">
-            </a>
-          </div>
--->
         </section>
         <section id="about-us">
             <div class="container">
-                <!--
-         <a href="#menu" class="scroll-to-termine-btn about-us">
-             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652670064/menu_3_gkbuct.png" alt="">
-         </a>
--->
+
                 <div class="png-cont flex-center">
                     <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652537552/kisspng-crpe-pancake-breakfast-food-crepe-maker-5b0f3059018264.2896341415277220730062_1_w4v6xa.png" alt="">
                     <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652463272/kisspng-pancake-crpe-maslenitsa-flavor-degustation-5b3aa947acb538.3578592215305710797074_hzy6ww.png" alt="">
@@ -1674,7 +2312,11 @@
                         <h3 class="dancing-script-font">Unsere Events</h3>
                         <div class="about-us-txt">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nemo voluptates iusto fuga, est quod soluta, reprehenderit quae culpa sit dignissimos optio? Porro eum quam blanditiis non corporis suscipit ipsa doloribus, deserunt voluptate natus animi labore laboriosam libero consequatur, debitis at pariatur sequi, maxime. <br><br> Blanditiis fugiat, amet laboriosam iste deserunt numquam est consequuntur alias ipsam consequatur beatae culpa quas saepe, quia et dolore cupiditate eos nemo eum illo. Qui sequi modi error, totam eveniet, quae commodi quo nisi. Ipsam saepe itaque tenetur soluta atque sint sapiente molestias consequuntur, doloribus natus voluptatibus officia corrupti nihil, beatae quam omnis nisi debitis aut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br><br>Dicta aut ab velit minus, voluptatibus! Maiores, qui eaque laboriosam sint at provident a praesentium neque debitis, consequuntur numquam, aperiam quas doloremque? Nobis non iste omnis, consequuntur quibusdam accusantium saepe reprehenderi.
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nemo voluptates iusto fuga, est quod soluta, reprehenderit quae culpa sit dignissimos optio? Porro eum quam blanditiis non corporis suscipit ipsa doloribus, deserunt voluptate natus animi labore laboriosam libero consequatur, debitis at pariatur sequi, maxime. 
+                                
+                                <br><br> Blanditiis fugiat, amet laboriosam iste deserunt numquam est consequuntur alias ipsam consequatur beatae culpa quas saepe, quia et dolore cupiditate eos nemo eum illo. Qui sequi modi error, totam eveniet, quae commodi quo nisi. Ipsam saepe itaque tenetur soluta atque sint sapiente molestias consequuntur, doloribus natus voluptatibus officia corrupti nihil, beatae quam omnis nisi debitis aut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                
+                                <br><br>Dicta aut ab velit minus, voluptatibus! Maiores, qui eaque laboriosam sint at provident a praesentium neque debitis, consequuntur numquam, aperiam quas doloremque? Nobis non iste omnis, consequuntur quibusdam accusantium saepe reprehenderi.
                             </p>
                             <div class="next-prev-cont">
                                 <div class="prev-btn">
@@ -1692,20 +2334,7 @@
             </div>
         </section>
         <section id="menu">
-<!--
-            <div class="corner lt">
-                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-            </div>
-            <div class="corner lb">
-                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-            </div>
-            <div class="corner rt">
-                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-            </div>
-            <div class="corner rb">
-                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-            </div>
--->
+
             <div class="container">
                 <h2 class="seciton-headline dancing-script-font">Unsere Auswahl</h2>
                 <div class="product-filter-cont flex-center">
@@ -1975,7 +2604,9 @@
                 <div class="container">
                     <div class="newsletter-wrapper">
                         <div class="newsletter-txt-cont flex-center">
-                            <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653187926/news_xelrue.png" alt="">
+                            <div>
+                                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653187926/news_xelrue.png" alt="">
+                            </div>
                             <p>
                                 Trag Dich in unseren Newsletter ein, um immer <br> direkt von neuen Terminen zu erfahren.
                             </p>
@@ -2100,15 +2731,18 @@
                     <span>|</span>
                     <li><a href="#contact">Kontakt</a></li>
                     <span>|</span>
-                    <li><a href="#about">Uber Uns</a></li>
+                    <li><a href="#about">Über Uns</a></li>
                     <span>|</span>
                     <li><a href="#">Impressum</a></li>
                 </ul>
             </div>
             <div class="copyright flex-center">
                 <p>
-                    Copyright &copy; 2022 by Liebhaberei.net Design & Code by Robert Machamud
+                    Copyright &copy; 2022 by Liebhaberei.net Design & Code by <a href="https://github.com/RobertMachamud/liebhaberei">Robert Machamud</a>
                 </p>
+            </div>
+            <div class="logo">
+                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652295292/cropped-Liebhaberei_Website_Header_Logo_textless_zhnyao.png" alt="logo" alt="">
             </div>
            </div>
         </footer>
@@ -2134,6 +2768,18 @@
         const rightLandingBtn = document.querySelector(".landing-btn");
         const landingBanner = document.querySelector("#landing-page:before");
         
+        // Slide In Menu
+        const slideInMenu = document.querySelector(".slide-in-navs");
+        const slideInMenuBg = document.querySelector(".slide-in-bg");
+        const slideInLinks = document.querySelectorAll(".slide-in-navs nav ul li");
+
+        // Menu Button - Lines
+        const menuFirstLine = document.querySelector(".menu-btn .line.f");
+        const menuSecndLine = document.querySelector(".menu-btn .line.s");
+        const menuLastLine = document.querySelector(".menu-btn .line.l");
+
+        let slideMenuOpen = false;
+        
         const tl = new TimelineMax();
 //        console.log(tl)
         
@@ -2142,18 +2788,69 @@
         
         tl.fromTo(subHeadline, 0.5, { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.5");
         
-        
-        
-        // cards -> glare; evtl Snickers 3d tilt; after clicking - btn cursive/txt normal (swap font-fam); bg color btn - brand-col; smth. -- snickers -- 
-        
-        
-        // icons nav in every section (weiter) - readme: consistent, user friendly, intuitive. same icons as in mobiele nav menu
-        //
+        // Menu Button - Slides in Menu
+        const toggleSlideInMenu = () => {
+            // animates menu lines (to cross)
+            menuFirstLine.classList.toggle("to-cross");
+            menuSecndLine.classList.toggle("to-cross");
+            menuLastLine.classList.toggle("to-cross");
+
+            // toggles the menu
+            if (slideMenuOpen) {
+                slideInMenuBg.classList.add("d-none");
+                slideInMenu.classList.remove("slide-ani");
+                slideMenuOpen = false;
+            }
+            else {
+                slideInMenuBg.classList.remove("d-none");
+                slideInMenu.classList.add("slide-ani");
+                slideMenuOpen = true;
+            } 
+        }
+
+
         
         
         
         // arrow btns -> appear when scroll on #menu - up -> scrolls to top of #menu / bottom -> scrolls to maybe absolute el. fixed at bottom of #menu
         
+        
+        
+//      on mobile - headers      font-size: 2.5em;
+        
+        
+        // des. height of header 80px/60px
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//            <div class="corner lt">
+//                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
+//            </div>
+//            <div class="corner lb">
+//                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
+//            </div>
+//            <div class="corner rt">
+//                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
+//            </div>
+//            <div class="corner rb">
+//                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
+//            </div>
+//        
     </script>
 </body>
 </html>
