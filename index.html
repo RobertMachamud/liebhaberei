@@ -630,14 +630,12 @@
         #about-us
         {
             background-color: var(--grayish-color); 
-/*            background-image: url("https://res.cloudinary.com/dxcrd5sos/image/upload/v1652492123/pngegg_6_wvhrzw.png");*/
             background-size: cover;
-             box-shadow: 0 19px 38px rgba(0,0,0,0.80), 0 15px 12px rgba(0,0,0,0.8);
+            box-shadow: 0 19px 38px rgba(0,0,0,0.8), 0 15px 12px rgba(0,0,0,0.8);
         }
         
-/* 'Shadow' at the bottom */
+        /* 'Shadow' at the bottom */
         #about-us:before
-/*        #landing-page:after*/
         {
             background: linear-gradient(to top, #333, transparent);
             z-index: 10000;
@@ -649,14 +647,6 @@
             height: 3.5%;
             pointer-events: none;
         }
-        
-/*
-        #landing-page:after
-        {
-            height: 2%;
-            background: linear-gradient(to top, var(--grayish-color), transparent);
-        }
-*/
         
         #about-us:after
         {
@@ -672,12 +662,6 @@
             pointer-events: none;
         }
         
-/* Scroll Svg */
-        .scroll-to-termine-btn.about-us
-        {
-            bottom: 2.5%;
-        }
-        
         #about-us .container
         {
             display: grid;
@@ -685,11 +669,106 @@
             column-gap: 3rem;
         }
         
-/* Png Images */
+        /* ----- Next Event */
+        
+        .next-event
+        {
+            background: var(--brand-color);
+            color: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 2px;
+            font-size: .9em;
+        }
+
+        .nxt-event-date 
+        {
+            margin-bottom: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .next-event div
+        {
+            text-align: center;
+            display: inline-block;
+        }
+
+        /* Name Of Next Event */
+        .next-event div h4
+        {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 0;
+            margin: 2.5px 0;
+        }
+
+        /* Time Of Next Event */
+        .next-event div .time
+        {
+            font-size: ;
+            font-weight: 300;
+            margin-right: 0;
+        }
+
+
+        /* ----- Next Events Container */
+        
+        .next-events
+        {
+            padding: 0 1.5rem;
+            padding-left: 15%;
+            margin-bottom: 2.5rem;
+        }
+        
+        /* Wrapper for event - date, location, time */
+        .next-event-wrapper
+        {
+            font-size: 14px;
+            margin-bottom: .5rem;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        
+        /* Bindestrich */
+        .next-event-wrapper span
+        {
+/*           !!! des. */
+            margin: 0 .6rem;
+/*            margin: 0 1rem;*/
+        }
+        
+        /* Next Events Date */
+        .n-date
+        {
+            font-weight: 600;
+            color: #000;
+            color: var(--brand-color);
+            text-shadow: 0 0 0 .3px rgba(69, 70, 82, .2);
+/*            text-shadow: 0 0 0 .3px rgba(0,0,0,1);*/
+/*            width: 4.5rem;*/
+            /*            margin-right: .25rem;*/
+
+        }
+        
+        /* Next Events Time - Color opacity */
+        .next-event-wrapper .time
+        {
+            color: rgba(115, 193, 179, .8);
+        }
+   
+        .n-location,
+        .next-event-wrapper .time
+        {
+            font-weight: 300;
+        }
+        
+        
+        /* ----- Png Images */
+        
         #about-us img
         {
 /*            !!! des. */
-            filter: grayscale(.4);
             filter: grayscale(.5);
 /*            filter: grayscale(.6);*/
         }
@@ -699,36 +778,39 @@
             flex-direction: column;
         }
         
+        /* Left Top Image */
         .png-cont img
         {
-            
-            transform: translateY(-10%) translateX(0%) scale(.8);
+            transform: translateY(-10%) translateX(5%) scale(.8);
         }
         
+        /* Left Bottom Image */
         .png-cont img:nth-child(2)
         {
-            transform: translate(5%, 70%) scale(.9);
-            transform: translate(-25%, 25%) scale(1.5);
+/*            transform: translate(5%, 70%) scale(.9);*/
+            transform: translate(-20%, 15%) scale(1.2);
         }
         
-/* Png at the bottom */
-        .bottom-png
-        {
-            position: absolute;
-            right: 0;
-            bottom: -25%;
-            width: 20rem;
-            transform: rotate()
-        }
-     
+        /* Pngs at the bottom */
         .left-bottom-png
         {
             position: absolute;
             left: 20%;
-            bottom: -60%;
+            bottom: -50%;
             width: 30rem;
             transform: rotate(10deg)
         }
+        
+        .bottom-png
+        {
+            position: absolute;
+            right: 0;
+/*            bottom: -20%;*/
+            bottom: -18%;
+            width: 20rem;
+        }
+     
+        
         
 /* Text Events */
         .about-us-txt
@@ -741,6 +823,13 @@
             z-index: 9999;
         }
         
+        .about-us-txt p
+        {
+            font-size: .9em;
+            font-size: 14px;
+/*            font-weight: 300;*/
+        }
+        
         .about-us-content
         {
             position: relative;
@@ -748,7 +837,7 @@
             margin-top: 20vh;
             padding: 8px;
             border-radius: 2px;
-            margin-bottom: 5rem;
+            margin-bottom: 7rem;
             transform-style: preserve-3d;
 /*            transform: perspective(1000px);*/
             z-index: 99;
@@ -771,6 +860,7 @@
             box-shadow: 0 0 2px 1px rgba(69, 70, 82, .5);
             border-radius: 0;
             padding: 1.5em 2em;
+            padding-bottom: 0;
             
 /*            !!! des. */
             min-height: 30rem;
@@ -780,13 +870,15 @@
         .page h3
         {
             text-align: center;
-            font-size: ;
+            margin-bottom: 1rem;
+/*            margin-bottom: .5rem;*/
         }
         
         /* Prev. and Next Buttons */
         .next-prev-cont
         {
             display: flex;
+            display: none;
             justify-content: flex-end;
             align-items: center;
             color: #000;
@@ -1250,7 +1342,6 @@
             height: auto;
             padding: 1em;
             font-size: 1em;
-            transition: .2s;
             margin-top: 10px;
             background: transparent;
             border: solid 2px var(--brand-color);
@@ -1422,7 +1513,8 @@
         .cooperation-cards
         {
             margin-top: 10rem;
-            margin-bottom: 5rem;
+/*            !!! des. */
+/*            margin-bottom: .5rem;*/
             display: grid;
             column-gap: 1.5em;
             column-gap: 2em;
@@ -1585,13 +1677,21 @@
                 bottom: -50%;
             }
             
-/*
-            .
+            .png-cont img
             {
-                bottom: -18%;
+                transform: translate(5%, -25%) scale(1.05);
             }
-*/
             
+            .png-cont img:nth-child(2)
+            {
+                transform: translate(-15%, 35%) scale(1.5);
+            }
+            
+            #about-us .container
+            {
+                grid-template-columns: 3fr 9fr;
+            }
+
             .next-events
             {
                 font-size: .9em;
@@ -1641,7 +1741,14 @@
             /* Events */
             #about-us .container
             {
-                grid-template-columns: 2fr 10fr;
+                grid-template-columns: 0fr 12fr;
+                column-gap: 0;
+            }
+            
+            .about-us-content
+            {
+                margin-top: 6rem;
+                margin-bottom: 6rem;
             }
             
             #about-us img:first-child
@@ -1660,6 +1767,12 @@
                 bottom: -45%;
             }
             
+            .page .next-events
+            {
+                margin-bottom: .5rem;
+                padding-left: 1.5rem;
+            }
+            
             .next-events .next-event-wrapper
             {
                 margin-bottom: 1rem;
@@ -1668,20 +1781,15 @@
                 padding-bottom: 1rem;
             }
             
-            .events-line
-            {
-                display: none;
-            }
-            
-            .next-event div
-            {
-                margin-bottom: 1.5rem;
-            }
-            
             /* Removes last underline */
             .next-events .next-event-wrapper:last-child
             {
                 box-shadow: none;
+            }
+            
+            .next-event-wrapper .time
+            {
+                margin: 0 auto;
             }
             
             .next-event-wrapper span
@@ -1826,6 +1934,11 @@
         
         @media only screen and (max-width: 768px)
         {
+            .slide-in-navs
+            {
+                width: 75%;
+            }
+            
             /* Landing Page */
             #landing-page:before
             {
@@ -1843,6 +1956,12 @@
             {
                 grid-template-columns: 1fr;
                 margin-bottom: 2.5rem;
+            }
+            
+            /* About Us */
+            .cooperation-cards
+            {
+                row-gap: 1.5rem;
             }
         }
         
@@ -2048,6 +2167,13 @@
                 font-size: 0.85em;
             }
             
+/* Events */
+            .page
+            {
+                padding-left: .5rem; 
+                padding-right: .5rem; 
+            }
+            
             /* Products */
             .card-icon:before,
             .card-icon:after
@@ -2154,6 +2280,14 @@
             }
         }
         
+        @media only screen and (max-width: 360px) and (max-height: 550px)
+        {
+            .landing-btns
+            {
+                margin-bottom: 2.5rem;
+            }
+        }
+        
         
         @media only screen and (max-width: 305px)
         {
@@ -2163,6 +2297,8 @@
                 font-size: .65em;
             }
         }
+        
+        
         
         
 /* LANDSCAPE */
@@ -2233,35 +2369,98 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
          
         
+        
+/* ------------------------------------------- Confusing Scroll Magic classes (experimenting) */
+        
+        /* Landing Page */
+        
+        .landig-png img,
+        .landing-content div h1,
+        .sub-headline,
+        .landing-content div p,
+        .landing-btn:first-child,
+        .landing-btn:nth-child(2)
+        {
+            opacity: 0;
+            transform: translateY(5rem);
+            transition: .75s ease;
+        }
+/* Img */
+        .landig-png img
+        {
+            transform: translate(-50%, -30%);
+        }
+        .landig-png img.show
+        {
+            transform: translate(-50%, -50%) !important;
+        }
+/* Delay */
+        .landig-png img
+        {
+            transition-delay: .05s;
+        }
+        .landing-content div h1
+        {
+            transition-delay: .1s;
+        }
+        .sub-headline,
+        .landing-content div p
+        {
+            transition-delay: .2s;
+        }
+        .landing-btn:first-child,
+        .landing-btn:nth-child(2)
+        {
+            transform: translateY(6.5rem);
+            transition: .85s ease;
+        }
+        .landing-btn:first-child
+        {
+            transition-delay: .3s;
+        }
+        .landing-btn:nth-child(2)
+        {
+            transition-delay: .35s;
+        }
+        
+        
+        .landig-png img.show,
+        .landing-content div h1.show,
+        .sub-headline.show,
+        .landing-content div p.show,
+        .landing-btn:first-child.show,
+        .landing-btn:nth-child(2).show
+        {
+            opacity: 1;
+            transform: translateY(0);
+        }
         
         
         #about-us img:first-child,
         #about-us img:nth-child(2),
         .left-bottom-png,
-        .bottom-png,
-        .owner p,
-        .owner img
+        .bottom-png
         {
             opacity: 0;
-            transition: .5s ease-out;
+            transition-delay: .25s !important;
+            transition: .8s ease;
         }
-        
-        .owner p.show,
-        .owner img.show
+        .left-bottom-png,
+        .bottom-png
         {
-            transform: translateY(0);
+            transition-delay: .38s;
         }
-    
-        
-        .owner p,
-        .owner img
-        {
-            transition: .6s ease-out;
-            transform: translateY(6rem);
-        }
-        
+        /* Show */
         #about-us img:first-child.show,
         #about-us img:nth-child(2).show,
         .left-bottom-png.show,
@@ -2271,108 +2470,111 @@
         {
             opacity: 1;
         }
+        
+        
+        /* About Us */
+        .owner p,
+        .owner img
+        {
+            transform: translateY(6rem);
+            opacity: 0;
+            transition: .5s ease-out;
+        }
+        .owner img
+        {
+            transition-delay: .4s;
+            transition: .5s ease-out;
+        }
+        .owner p
+        {
+            transition-delay: .8s;
+            transition: .5s ease-out;
+        }
+        /* Show */
+        .owner p.show,
+        .owner img.show
+        {
+            transform: translateY(0);
+        }
+        
 
+/*        Important - delay doesnt work - need to make it imp or chain classes/el. */
+/*      !!!  ON MOBILE - font size 14PX  */
         
-        
-        
-        
-            .nxt-event-date 
-            {
-                
-                font-size: ;
-                margin-bottom: .25rem !important;
-                margin-right: 0 !important;
-            }
-        
-            .next-event > h4
-            {
-                text-align: left;
-                font-size: 1.2rem;
-                font-weight: 400;
-                margin-bottom: 1.5rem;
-            }
-                    
-            .next-event
-            {
-                text-align: right;
-            }
-        
-            .next-event div
-            {
-                text-align: center;
-                display: inline-block;
-                margin-right: 2.5rem;
-            }
- 
-            .next-event div h4
-            {
-                font-size: ;
-                font-weight: 400;
-                color: ;
-                margin-bottom: .5rem;
-            }
-
-            .next-event div .time
-            {
-                font-size: ;
-                font-weight: 300;
-                margin-right: 0;
-            }
-        
-            .next-event
-            {
-                background: var(--brand-color);
-                color: #fff;
-                padding: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-        
-/*            Line between Nxt Event & Nxt Events */
-            .events-line
+        /* Contact */
+        .contact-form form ul li #name,
+        .contact-form form ul li #email,
+        #message,
+        .contact-img img
         {
-            width: 100%;
-            height: 1px;
-            background: var(--grayish-color);
-            opacity: .6;
-            margin: 1.5rem auto;
+            opacity: 0;
+            transform: translateY(3rem);
+            transition: .6s ease;
+        }
+        .contact-form form ul li #name
+        {
+            transition-delay: .15s;
+        }
+        .contact-form form ul li #email
+        {
+            transition-delay: .25s;
+        }
+        #message
+        {
+            transition-delay: .35s;
+        }
+        #submit_contact
+        {
+            opacity: 0;
+            transform: translateY(4rem);
+            transition-delay: .8s;
+            transition: .7s ease;
+        }
+        
+        .cooperation-card
+        {
+            opacity: 0;
+            transform: translateY(3rem);
+            transition: .4s ease;
+        }
+        .cooperation-card:nth-child(2)
+        {
+            transition-delay: .15s;
+        }
+        .cooperation-card:nth-child(3)
+        {
+            transition-delay: .3s;
+        }
+        
+        .contact-form form ul li #name.show,
+        .contact-form form ul li #email.show,
+        #message.show,
+        #submit_contact.show,
+        .cooperation-card.show
+        {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        
+        
+        /* Image */
+        .contact-img img
+        {
+            opacity: 0;
+            transform: translate(-50%, -30%);
+        }
+        
+        .contact-img img.show
+        {
+            opacity: 1;
+            transform: translate(-50%, -50%);
         }
         
         
         
         
-        .next-events
-        {
-            padding: 0 1.5rem;
-            margin-bottom: 2.5rem;
-        }
         
-        .next-event-wrapper
-        {
-            margin-bottom: .5rem;
-            flex-wrap: wrap;
-        }
-        
-        .next-event-wrapper span
-        {
-            margin: 0 .6rem;
-        }
-        
-        .n-date
-        {
-            font-weight: 400;
-        }
-        
-        .n-location,
-        .next-event-wrapper .time
-        {
-            font-weight: 300;
-        }
-        
-        .next-event-wrapper .time
-        {
-            
-        }
-   
         
     </style>
     
@@ -2519,28 +2721,18 @@
               
               
               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653705660/pngegg_53_tqpiby.png" alt="">
-               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653692603/pngegg_44_rtaeux.png" alt="">
+               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653706135/pngegg_56_maxoed.png" alt="">
                 </div>
                 <div class="about-us-content centered" data-tilt-max="3" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
                     <div class="page first-page">
-                        <h3 class="dancing-script-font">Unsere Events</h3>
+                        <h3 class="dancing-script-font">Unsere Termine</h3>
                         <div class="about-us-txt">
-<!--
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus nemo voluptates iusto fuga, est quod soluta, reprehenderit quae culpa sit dignissimos optio? Porro eum quam blanditiis non corporis suscipit ipsa doloribus, deserunt voluptate natus animi labore laboriosam libero consequatur, debitis at pariatur sequi, maxime. 
-                                
-                                <br><br> Blanditiis fugiat, amet laboriosam iste deserunt numquam est consequuntur alias ipsam consequatur beatae culpa quas saepe, quia et dolore cupiditate eos nemo eum illo. Qui sequi modi error, totam eveniet, quae commodi quo nisi. Ipsam saepe itaque tenetur soluta atque sint sapiente molestias consequuntur, doloribus natus voluptatibus officia corrupti nihil, beatae quam omnis nisi debitis aut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                                
-                                <br><br>Dicta aut ab velit minus, voluptatibus! Maiores, qui eaque laboriosam sint at provident a praesentium neque debitis, consequuntur numquam, aperiam quas doloremque? Nobis non iste omnis, consequuntur quibusdam accusantium saepe reprehenderi.
-                            </p>
--->
-                          
                            <p>
-                               Wir sind an verschiedenen Standorten unterwegs. Schau einfach hier rein, alternativ kannst du Dich über Instagram auf dem Laufenden halten.
+                               Wir sind an verschiedenen Standorten unterwegs. Alternativ kannst du Dich über Instagram auf dem Laufenden halten.
                            </p>
                            <div class="next-event flex-center">
 <!--                               <h4>Nächster Termin</h4>-->
-                               <div>
+                               <div class="flex-center">
                                    <div class="nxt-event-date">
                                        Samstag, 19.03.2022 (Marz)
                                    </div>
@@ -2548,65 +2740,63 @@
                                    <div class="time">10:00 bis 15:30 Uhr</div>
                                </div>
                            </div>
-<!-- Seperation Line -->
-<!--                           <div class="events-line"></div>-->
 <!-- Switch Pages Buttons -->
                            <div class="next-events">
                                <div class="next-event-wrapper flex-center">
                                    <div class="n-date">18.6.</div>
-                                   <span>|</span>
+                                   <span>-</span>
                                    <div class="n-location">Nebenan & Unverpackt,  München</div>
-                                   <span>|</span>
+                                   <span>-</span>
                                    <div class="time">10-15.30 Uhr</div>
                                </div>
                                
                                <div class="next-event-wrapper flex-center">
                                    <div class="n-date">20. - 22.5.</div>
-                                   <span>|</span>
+                                   <span>-</span>
                                    <div class="n-location">Altdorfer Gartenzauber</div>
                                    <div class="time"></div>
                                </div>
                                   
                                   <div class="next-event-wrapper flex-center">
                                    <div class="n-date">22.-24.4.</div>
-                                   <span>|</span>
+                                   <span>-</span>
                                    <div class="n-location">Leckerland Streetfood Festival, Tänzelfestplatz, Kaufbeuren</div>
                                    <div class="time"></div>
                                </div>
                                   
                                 <div class="next-event-wrapper flex-center">
                                    <div class="n-date">19.3.</div>
-                                   <span>|</span>
+                                   <span>-</span>
                                    <div class="n-location"> Nebenan und Unverpackt, München</div>
-                                   <span>|</span>
-                                   <div class="time">10 - 15.30 Uhr</div>
+                                   <span>-</span>
+                                   <div class="time">10-15.30 Uhr</div>
                                </div>
                                   <div class="next-event-wrapper flex-center">
                                    <div class="n-date">23.7.</div>
-                                   <span>|</span>
+                                   <span>-</span>
                                    <div class="n-location">Tag der offenen Tür – BRK Aubing</div>
-                                   <span>|</span>
-                                   <div class="time">10 - 15.30 Uhr</div>
+                                   <span>-</span>
+                                   <div class="time">10-15.30 Uhr</div>
                                </div>
                                 <div class="next-event-wrapper flex-center">
                                    <div class="n-date">19.3.</div>
-                                   <span>|</span>
+                                   <span>-</span>
                                    <div class="n-location"> Nebenan und Unverpackt, München</div>
-                                   <span>|</span>
-                                   <div class="time">10 - 15.30 Uhr</div>
+                                   <span>-</span>
+                                   <div class="time">10-15.30 Uhr</div>
                                </div>
                                   <div class="next-event-wrapper flex-center">
-                                   <div class="n-date">12. - 14.8.</div>
-                                   <span>|</span>
+                                   <div class="n-date">12.-14.8.</div>
+                                   <span>-</span>
                                    <div class="n-location">Leckerland Streetfood Festival Puchheim</div>
                                    <div class="time"></div>
                                </div>
                                   <div class="next-event-wrapper flex-center">
                                    <div class="n-date">18.10.</div>
-                                   <span>|</span>
+                                   <span>-</span>
                                    <div class="n-location"> Nebenan & Unverpackt,  München</div>
-                                   <span>|</span>
-                                   <div class="time">10.00 – 15.30 Uhr</div>
+                                   <span>-</span>
+                                   <div class="time">10.00–15.30 Uhr</div>
                                </div>
                            </div>
                            
@@ -2975,7 +3165,7 @@
                         <h3 class="c-headline dancing-script-font">Feste &amp; Märkte</h3>
                         <div class="c-txt">
                             <p>
-                                Ihr organisiert ein Festival und sucht noch eine vegane Ergänzung im Standportfolio? Ihr wollt euren Wochenmarkt mit einem leckeren Essensangebot ergänzen? Euer Nachtflohmarkt braucht noch ein kulinarisches Angebot? Gerne sind wir vor Ort und verwöhnen eure Besucher.
+                                Ihr organisiert ein Festival und sucht noch eine vegane Ergänzung im Standportfolio? Euer Wochenmarkt oder Nachtflohmarkt braucht noch ein kulinarisches Angebot? Gerne sind wir vor Ort und verwöhnen eure Besucher.
                             </p>
                         </div>
                     </div>
@@ -2986,7 +3176,7 @@
                         <h3 class="c-headline dancing-script-font">Firmenfeiern</h3>
                         <div class="c-txt">
                             <p>
-                                Das Firmenjubiläum findet draußen statt und statt Catering wird es dieses Mal Foodtrucks geben? Für den Workshop benötigt ihr noch ein innovatives und attraktives Essensangebot? Wir sind gerne vor Ort dabei und verpflegen eure Mitarbeiter*innen.
+                                Das Firmenjubiläum findet draußen statt und statt Catering wird es dieses Mal Foodtrucks geben? Für den Workshop benötigt ihr noch ein innovatives und attraktives Essensangebot? Gerne verpflegen wir eure Mitarbeiter*innen.
                             </p>
                         </div>
                     </div>
@@ -3080,24 +3270,66 @@
 
         let slideMenuOpen = false;
         
-        const tl = new TimelineMax();
+//        const tl = new TimelineMax();
         
         
-        
-//        tl.fromTo(mainHeadline, 0.5, { opacity: 0, y: 30 }, { opacity: 1, y: 0 }, "-=0.5");
-        
-//        tl.fromTo(landingBanner, 0.5, { width: "0%" }, { width: "60%" });
-        
-        
+        // ------------------------------------------- SCROLL MAGIC FUNCTIONS
         
         const controller = new ScrollMagic.Controller();
+
         
-//        let scene = new ScrollMagic.Scene({
-//            triggerElement: ".about-us-content"
-//        })
-//        .setClassToggle(".about-us-content", "slide-up")
-//        .addTo(controller)
-//        
+        // ----- Landing Page
+        
+        let sceneLImg = new ScrollMagic.Scene({
+            triggerElement: ".landing-content div h1",
+            offset: -150
+        })
+        .setClassToggle(".landig-png img", "show")
+        .addTo(controller)
+        
+
+        let sceneL = new ScrollMagic.Scene({
+            triggerElement: ".landing-content div h1",
+            offset: -150
+        })
+        .setClassToggle(".landing-content div h1", "show")
+        .addTo(controller)
+        
+        
+        let sceneL2 = new ScrollMagic.Scene({
+            triggerElement: ".landing-content div h1",
+            offset: -150
+        })
+        .setClassToggle(".sub-headline", "show")
+        .addTo(controller) 
+        
+        
+        let sceneL3 = new ScrollMagic.Scene({
+            triggerElement: ".landing-content div h1",
+            offset: -150
+        })
+        .setClassToggle(".landing-content div p", "show")
+        .addTo(controller)
+        
+        
+        let sceneLB1 = new ScrollMagic.Scene({
+            triggerElement: ".landing-content div h1",
+            offset: -150
+        })
+        .setClassToggle(".landing-btn:first-child", "show")
+        .addTo(controller)
+        
+        
+        let sceneLB2 = new ScrollMagic.Scene({
+            triggerElement: ".landing-content div h1",
+            offset: -150
+        })
+        .setClassToggle(".landing-btn:nth-child(2)", "show")
+        .addTo(controller)
+        
+        
+        // ----- Events
+        
         let scene2 = new ScrollMagic.Scene({
             triggerElement: "#about-us"
         })
@@ -3122,29 +3354,78 @@
         .setClassToggle(".bottom-png", "show")
         .addTo(controller)
         
+ 
+        // ----- Contact
+        
+        let sceneKImg = new ScrollMagic.Scene({
+            triggerElement: "#contact .seciton-headline"
+        })
+        .setClassToggle(".contact-img img", "show")
+        .addTo(controller)
         
         
+        let sceneK = new ScrollMagic.Scene({
+            triggerElement: "#contact .seciton-headline"
+        })
+        .setClassToggle(".contact-form form ul li #name", "show")
+        .addTo(controller)
+        
+        
+        let sceneK2 = new ScrollMagic.Scene({
+            triggerElement: "#contact .seciton-headline"
+        })
+        .setClassToggle(".contact-form form ul li #email", "show")
+        .addTo(controller)
+
+        
+        let sceneK3 = new ScrollMagic.Scene({
+            triggerElement: "#contact .seciton-headline"
+        })
+        .setClassToggle("#message", "show")
+        .addTo(controller)
+
+
+        let sceneK4 = new ScrollMagic.Scene({
+            triggerElement: "#contact .seciton-headline"
+        })
+        .setClassToggle("#submit_contact", "show")
+        .addTo(controller)
+
+
+        // ----- About
         
         let sceneA = new ScrollMagic.Scene({
-            triggerElement: ".owner p"
+            triggerElement: "#about .container .seciton-headline"
         })
         .setClassToggle(".owner p", "show")
         .addTo(controller)
         
         
         let sceneA2 = new ScrollMagic.Scene({
-            triggerElement: ".owner img"
+            triggerElement: "#about .container .seciton-headline"
         })
         .setClassToggle(".owner img", "show")
         .addTo(controller)
         
         
- 
+//        let sceneA2 = new ScrollMagic.Scene({
+//            triggerElement: ".owner img"
+//        })
+//        .setClassToggle(".owner img", "show")
+//        .addTo(controller)
+        
+        // 3 Info Cards/Blocks
+        
+        let sceneACoop = new ScrollMagic.Scene({
+            triggerElement: ".cooperation-card",
+            offset: -250
+        })
+        .setClassToggle(".cooperation-card", "show")
+        .addTo(controller)
         
         
-        
-        
-        
+        // ------------------------------------------- TOGGLE FUNCTIONS
+          
         // Menu Button - Slides in Menu
         const toggleSlideInMenu = () => {
             // animates menu lines (to cross)
@@ -3169,13 +3450,23 @@
         
         
         
+        
+        // Product Information Button
+        const productBtn = () => {
+            console.log("yOOOOooooooOOooOOOOOoo")
+        }
+        
+        const allProductBtns = document.querySelectorAll(".info-btn");
+        
+        allProductBtns.forEach(pb => pb.addEventListener("click", productBtn))
+        
+        
         // arrow btns -> appear when scroll on #menu - up -> scrolls to top of #menu / bottom -> scrolls to maybe absolute el. fixed at bottom of #menu
         
         
         
         
         
-        // des. height of header 80px/60px
         
         
         
@@ -3187,28 +3478,6 @@
         
 //        https://www.pngegg.com/
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//            <div class="corner lt">
-//                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-//            </div>
-//            <div class="corner lb">
-//                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-//            </div>
-//            <div class="corner rt">
-//                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-//            </div>
-//            <div class="corner rb">
-//                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652598611/kindpng_583673_hctoa7.png" alt="">
-//            </div>
-//        
     </script>
 </body>
 </html>
