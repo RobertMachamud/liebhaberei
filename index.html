@@ -53,6 +53,11 @@
             background: #f5f5f5;
         }
         
+        p
+        {
+            line-height: 2rem;
+        }
+        
         ul
         {
             list-style: none;
@@ -149,10 +154,7 @@
             left: 0;
             right: 0;
             width: 100%;
-/*            !!! des */
-            height: 80px;
             height: 100px;
-/*            height: 60px;*/
             color: #7F7F7F;
             background: #fff;
             box-shadow: 2px 0 3px rgba(69, 70, 82, .8);
@@ -161,7 +163,7 @@
         }
         
         /* Logo */
-        .logo-cont span
+        .logo-cont a
         {
             font-size: 1.5rem;
         }
@@ -195,8 +197,10 @@
         {
             position: relative;
 /*            !!! des */
+            margin-right: 2.5rem;
             margin-right: 2rem;
-/*            margin-right: 1.5rem;*/
+            transition: .2s ease;
+            transform-origin: left;
         }
         
         /* Telephone nr. */
@@ -221,19 +225,26 @@
             font-size: small;
         }
         
-/*        */
-        .header-content nav ul li:before
+/* Nav Underline (active) */
+        .active-nav
         {
-            content: '';
             position: absolute;
-            bottom: -.8rem;
+            bottom: -.5rem;
             width: 0%;
-            height: 3px;
+            transform-origin: left;
+            transition: .2 ease;
+            height: 2px;
             border-radius: 1px;
             background: var(--grayish-color);
         }
         
-        .header-content nav ul li:hover nav ul li:before
+        /* Last nav with no underline */
+        .header-content nav ul li:last-child:before
+        {
+            display: none;
+        }
+        
+        .active-nav.active
         {
             width: 100%;
         }
@@ -251,7 +262,6 @@
         .menu-btn
         {
             position: relative;
-            height: 30px;
             height: 25px;
             width: 40px;
             cursor: pointer;
@@ -576,13 +586,15 @@
         
         
         
-        .absolute-link
+        .absolute-link,
+        .toggle-menu
         {
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
             width: 100%;
+            cursor: pointer;
             z-index: 999;
         }
         
@@ -700,7 +712,7 @@
             font-weight: 400;
             color: #000;
             margin-bottom: 0;
-            margin: 2.5px 0;
+            margin: 5px 0;
         }
 
         /* Time Of Next Event */
@@ -827,7 +839,8 @@
         {
             font-size: .9em;
             font-size: 14px;
-/*            font-weight: 300;*/
+            line-height: 1.2rem;
+            color: var(--grayish-color);
         }
         
         .about-us-content
@@ -842,7 +855,8 @@
 /*            transform: perspective(1000px);*/
             z-index: 99;
             
-            transition: .2s ease;
+/*            transition: .2s ease;*/
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 /*            transform: perspective(1000px) translateY(80%);*/
 /*            opacity: 0;*/
         }
@@ -1080,13 +1094,130 @@
         
         .card-img-top
         {
-/*            !!!! */
             position: relative;
-/*            height: 8.5rem;*/
             margin-top: .5rem;
             margin-bottom: 1rem;
             padding: .3rem;
         }
+     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+/* Toggled Card - Info */
+        
+        .card.info
+        {
+            background: var(--grayish-color);
+            color: #fff;
+        }
+        
+        .card.info .card-title
+        {
+            opacity: 0;
+        }
+        
+        .card.info .card-icon img
+        {
+            opacity: 0;
+        }
+        
+        .card.info .card-img-top img
+        {
+            opacity: 0;
+        }
+ 
+        /* Description Text - Prod. Card */
+        .card.info .desc-txt
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            width: 100%;
+            padding: .8rem;
+            text-align: center;
+            color: #fff;
+            font-weight: 300;
+        }
+        
+        .card.info .desc-txt p
+        {
+/*            on next stage bigger card */
+/*            line-height: 1.5rem;    p  */
+/*                padding-top: 1.5rem;   card */
+            
+            
+/*            Big Stage */
+/*            font-size: 1rem; p */
+/*        (1.5rem line-h) */
+/*            padding: .5rem; p */
+            
+/*            cards - less glare ! */
+            
+/*            !!!!! */
+
+            line-height: 1.2rem;
+        }
+        
+        .card.info .desc-txt .underline
+        {
+            width: 80%;
+            height: 1px;
+            background: #fafafa;
+            margin: 1.5rem auto;
+        }
+        
+        .card.info .desc-txt .ingr-component
+        {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: .8rem;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 54px 55px, rgba(0, 0, 0, 0.22) 0px -12px 30px, rgba(0, 0, 0, 0.22) 0px 4px 6px, rgba(0, 0, 0, 0.27) 0px 12px 13px, rgba(0, 0, 0, 0.19) 0px -3px 5px;
+            
+/*
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            
+*/
+/*
+background: #454652;
+box-shadow:  -24px 24px 45px #3b3c46,
+             24px -24px 45px #4f515e;
+*/
+        }
+        
+        .card.info .desc-txt .ingr-component img
+        {
+/*
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+*/
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         .card-img-top img
         {
@@ -1456,16 +1587,8 @@
             clear: none;
         }
         
-       
         
 /* ABOUT US */
-        
-        #about
-        {
-            
-        }
-        
-         
         
         .owner
         {
@@ -1507,16 +1630,18 @@
         {
             border-left: var(--brand-color) 3px solid;
             padding-left: 0.5rem;
+/*            font-weight: 300;*/
+/*          !!!!  des */
+/*            color: var(--grayish-color);*/
         }
         
 /* Cooperation Cards */
         .cooperation-cards
         {
             margin-top: 10rem;
-/*            !!! des. */
+/*            !!!! des. */
 /*            margin-bottom: .5rem;*/
             display: grid;
-            column-gap: 1.5em;
             column-gap: 2em;
             grid-template-columns: 1fr 1fr 1fr;
         }
@@ -1530,7 +1655,6 @@
         
         .cooperation-card .c-icon
         {
-/*            height: 1rem;*/
             margin-bottom: 1.5rem;
         }
         
@@ -1554,14 +1678,9 @@
 /* FOOTER */
         footer
         {
-/*          !!!  des.*/
             min-height: 60vh;
-/*          !!!  des. */
             font-weight: 300;
             background-color: var(--brand-color);
-/*            background-color: var(--grayish-color);*/
-            background-position: right;
-            background-size: cover;
         }
         
 /* Footer Headline */
@@ -1659,10 +1778,12 @@
             width: 4rem;
             border-radius: 50%;
             margin: 3.5rem auto;
+            transition: .6s ease;
             background: linear-gradient(225deg, #68aea1, #7bcfc0);
+/*
             box-shadow:  -8px 8px 16px #5fa095,
              8px -8px 16px rgba(135, 226, 209, .9);
-/*                #87e2d1;*/
+*/
         }
         
         
@@ -1714,6 +1835,14 @@
         }
         
         
+        @media only screen and (min-width: 991px)
+        {
+            .skip-menu-btn
+            {
+                display: none;
+            }
+        }
+        
         @media only screen and (max-width: 991px)
         {
             /* Sections */
@@ -1763,7 +1892,7 @@
             
             .left-bottom-png
             {
-                left: -15%;
+                left: -25%;
                 bottom: -45%;
             }
             
@@ -1808,6 +1937,28 @@
             .products
             {
                 grid-template-columns: 1fr 1fr;
+            }
+            
+            .skip-menu-btn
+            {
+                position: fixed;
+                bottom: 2.5%;
+                right: 2.5%;
+                width: 40px;
+                height: 40px;
+/*
+                width: 35px;
+                height: 35px;
+*/
+                background-color: var(--grayish-color);
+                border-radius: 50%;
+                z-index: 999;
+                box-shadow: rgba(0, 0, 0, 0.66) 0px 22px 70px 4px;
+            }
+
+            .skip-menu-btn img
+            {
+                width: 60%;
             }
             
             /* Contact */
@@ -1889,6 +2040,19 @@
             .header-content
             {
                 display: none;
+            }
+            
+            /* Events */
+            .left-bottom-png
+            {
+                bottom: -3%;
+                filter: grayscale(.7) !important;
+            }
+            
+            .bottom-png
+            {
+                right: -25%;
+                bottom: -12%;
             }
 
             /* About */
@@ -1984,7 +2148,7 @@
             .landig-png
             {
                 position: relative;
-                height: 20rem;
+                height: 15rem;
                 grid-column-start: 1;
                 grid-row-start: 1;
             }
@@ -2006,6 +2170,11 @@
                 column-gap: 0;
             }
             
+            .bottom-png
+            {
+                display: none;
+            }
+            
             /* Products */
             .products
             {
@@ -2015,7 +2184,7 @@
             .card-icon:before,
             .card-icon:after
             {
-                width: 500%;
+                width: 400%;
             }
             
             /* About */
@@ -2054,6 +2223,11 @@
         
         @media only screen and (max-width: 680px)
         {
+            p
+            {
+                line-height: 1.2rem;
+            }
+            
             /* Footer */
             .footer-contact-icons
             {
@@ -2070,6 +2244,7 @@
         
         @media only screen and (max-width: 680px)
         {
+            /* Navigation */
             .slide-in-navs
             {
                 width: 100%;
@@ -2097,7 +2272,7 @@
             
             .landig-png
             {
-                height: 10rem;
+/*                height: 10rem;*/
             }
         }
         
@@ -2107,6 +2282,11 @@
             .seciton-headline
             {
                 font-size: 3em;
+            }
+            
+            .contact-img
+            {
+                height: 18rem;
             }
         }
         
@@ -2123,6 +2303,22 @@
             .products
             {
                 padding: 0;
+            }
+            
+            .skip-menu-btn
+            {
+                width: 35px;
+                height: 35px;
+                bottom: .5%;
+                right: .5%;
+/*                des */
+                background: rgba(69,70,82,.8);
+                background: rgba(69,70,82,.6);
+            }
+            
+            .skip-menu-btn:hover
+            {
+                background: rgba(69,70,82,1);
             }
             
             .card-icon:before,
@@ -2152,7 +2348,6 @@
             /* Header/Nav */
             .logo
             {
-/*                !!! des. */
                 width: 40px;
             }
             
@@ -2192,6 +2387,16 @@
                 padding: 0;
             }
             
+            .contact-img
+            {
+                height: 15rem;
+            }
+            
+            #submit_contact
+            {
+                margin-top: 5px;
+            }
+            
             /* Newsletter */
             .newsletter-txt-cont
             {
@@ -2219,7 +2424,8 @@
             /* Footer */
             footer .container ul
             {
-                flex-direction: column;  
+/*                flex-direction: column;  */
+                flex-wrap: wrap;
                 font-size: 1rem;
             }
             
@@ -2268,6 +2474,12 @@
                 font-size: 1.3em;
             }
             
+/* Events */
+            .next-event div h4
+            {
+                font-size: 1.2rem;
+            }
+            
             /* Newsletter */
             .newsletter-wrapper
             {
@@ -2280,11 +2492,21 @@
             }
         }
         
+        
         @media only screen and (max-width: 360px) and (max-height: 550px)
         {
             .landing-btns
             {
                 margin-bottom: 2.5rem;
+            }
+        }
+        
+        
+        @media only screen and (max-width: 320px)
+        {
+            .landig-png
+            {
+                height: 11rem;
             }
         }
         
@@ -2295,6 +2517,18 @@
             .landing-content
             {
                 font-size: .65em;
+            }
+            
+            /* About Us */
+            .owner p,
+            .c-txt
+            {
+                font-size: 14px;
+            }
+            
+            .cooperation-cards
+            {
+                row-gap: 0rem;
             }
         }
         
@@ -2382,7 +2616,7 @@
         
 /* ------------------------------------------- Confusing Scroll Magic classes (experimenting) */
         
-        /* Landing Page */
+        /* ----- Landing Page */
         
         .landig-png img,
         .landing-content div h1,
@@ -2395,7 +2629,7 @@
             transform: translateY(5rem);
             transition: .75s ease;
         }
-/* Img */
+        /* Img */
         .landig-png img
         {
             transform: translate(-50%, -30%);
@@ -2404,7 +2638,7 @@
         {
             transform: translate(-50%, -50%) !important;
         }
-/* Delay */
+        /* Delay */
         .landig-png img
         {
             transition-delay: .05s;
@@ -2432,8 +2666,7 @@
         {
             transition-delay: .35s;
         }
-        
-        
+        /* Show */
         .landig-png img.show,
         .landing-content div h1.show,
         .sub-headline.show,
@@ -2445,6 +2678,7 @@
             transform: translateY(0);
         }
         
+        /* ----- Events */
         
         #about-us img:first-child,
         #about-us img:nth-child(2),
@@ -2453,7 +2687,7 @@
         {
             opacity: 0;
             transition-delay: .25s !important;
-            transition: .8s ease;
+            transition: 1s ease;
         }
         .left-bottom-png,
         .bottom-png
@@ -2471,24 +2705,28 @@
             opacity: 1;
         }
         
+        /* ----- About Us */
         
-        /* About Us */
         .owner p,
         .owner img
         {
             transform: translateY(6rem);
             opacity: 0;
-            transition: .5s ease-out;
+            transition: .6s ease-out;
         }
         .owner img
         {
-            transition-delay: .4s;
-            transition: .5s ease-out;
+            transition-delay: .2s;
+            transition: .6s ease;
         }
         .owner p
         {
-            transition-delay: .8s;
-            transition: .5s ease-out;
+            transition-delay: .1s;
+            transition: .5s ease;
+        }
+        .owner:nth-child(2) p
+        {
+            transition-delay: .1s;
         }
         /* Show */
         .owner p.show,
@@ -2497,11 +2735,8 @@
             transform: translateY(0);
         }
         
-
-/*        Important - delay doesnt work - need to make it imp or chain classes/el. */
-/*      !!!  ON MOBILE - font size 14PX  */
+        /* ----- Contact */
         
-        /* Contact */
         .contact-form form ul li #name,
         .contact-form form ul li #email,
         #message,
@@ -2510,6 +2745,11 @@
             opacity: 0;
             transform: translateY(3rem);
             transition: .6s ease;
+        }
+        .contact-img img
+        {
+            transition-delay: .08s;
+            transition: .7s ease;
         }
         .contact-form form ul li #name
         {
@@ -2573,9 +2813,63 @@
         
         
         
+        footer .container .logo.show
+        {
+            box-shadow:  -8px 8px 16px #5fa095,
+             8px -8px 16px rgba(135, 226, 209, .9);
+        }
+        
+        
+/*        image contact - 18rem - xs - 15rem */
+        
+/*        line height p - 2rem bis ca 700/600px */
+/*        Ani - make newsletter slide in left/right -> */
+        
+        
+/*
+        .skip-menu-btn
+        {
+            position: fixed;
+            bottom: .5%;
+            right: .5%;
+            width: 35px;
+            height: 35px;
+            background-color: var(--grayish-color);
+            border-radius: 50%;
+            z-index: 999;
+            box-shadow: rgba(0, 0, 0, 0.66) 0px 22px 70px 4px;
+        }
+        
+        .skip-menu-btn img
+        {
+            width: 60%;
+        }
+*/
+        .skip-menu-btn
+        {
+            opacity: 0;
+            transform: translateY(120%);
+            transition: .5s;
+        }
+        
+        .skip-menu-btn.show
+        {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .skip-menu-btn.hide,
+        .skip-menu-btn.show.hide
+        {
+            display: none;
+        }
         
         
         
+        .fiv-nav.opacity-zero
+        {
+            opacity: 0 !important;
+        }
     </style>
     
 </head>
@@ -2589,16 +2883,34 @@
                         <a href="#" class="logo">
                             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652295292/cropped-Liebhaberei_Website_Header_Logo_textless_zhnyao.png" alt="logo">
                         </a>
-                        <span class="dancing-script-font">Liebhaberei</span>
+                        <a href="#" class="dancing-script-font">Liebhaberei</a>
                     </div>
                     <nav>
+
                         <ul class="flex-center">
-                            <li><a href="#top-gap">Home</a></li>
-                            <li><a href="#about-us">Termine</a></li>
-                            <li><a href="#menu">Angebot</a></li>
-                            <li><a href="#contact">Kontakt</a></li>
-                            <li><a href="#about">Über Uns</a></li>
-                            <li class="tel-number"><a href="#">03043698341</a></li>
+                            <li>
+                                <a href="#top-gap">Home</a>
+                                <div class="active-nav fst-nav"></div>
+                            </li>
+                            <li>
+                                <a href="#about-us">Termine</a>
+                                <div class="active-nav scd-nav"></div>
+                            </li>
+                            <li>
+                                <a href="#menu">Angebot</a>
+                                <div class="active-nav trd-nav"></div>
+                            </li>
+                            <li>
+                                <a href="#contact">Kontakt</a>
+                                <div class="active-nav for-nav"></div>
+                            </li>
+                            <li>
+                                <a href="#about">Über Uns</a>
+                                <div class="active-nav fiv-nav"></div>
+                            </li>
+                            <li class="tel-number">
+                                <a href="#">03043698341</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -2610,11 +2922,10 @@
                         <span class="dancing-script-font">Liebhaberei</span>
                     </div>
                     <div class="menu-btn">
-                        <div onclick="toggleSlideInMenu()" class="menu-btn">
+                       <div onclick="toggleSlideInMenu()" class="toggle-menu"></div>
                         <div class="line f"></div>
                         <div class="line s"></div>
                         <div class="line l"></div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -2675,7 +2986,7 @@
             </nav>
         </div>
         <div id="top-gap"></div>
-        <section id="landing-page" class="flex-center">
+        <section id="landing-page" class="flex-center nav-point">
             <div class="landing-page-bg"></div>
             <div class="container">
                 <div class="landing-content">
@@ -2699,13 +3010,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="landig-png"><img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652808507/pngegg_35_eurdcx.png" alt=""></div>
+                    <div class="landig-png">
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652808507/pngegg_35_eurdcx.png" alt="">
+                    </div>
                 </div>
 
             </div>
 
         </section>
-        <section id="about-us">
+        <section id="about-us" class="nav-point">
             <div class="container">
 
                 <div class="png-cont flex-center">
@@ -2721,7 +3034,8 @@
               
               
               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653705660/pngegg_53_tqpiby.png" alt="">
-               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653706135/pngegg_56_maxoed.png" alt="">
+               
+               <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1654347161/pngegg_56_Kopie_1_q6sn5r.png" alt="">
                 </div>
                 <div class="about-us-content centered" data-tilt-max="3" data-tilt data-tilt-glare data-tilt-max-glare="0.8">
                     <div class="page first-page">
@@ -2821,8 +3135,11 @@
                 <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652603151/kindpng_4895588_pvgmqp.png" alt="" class="left-bottom-png">
             </div>
         </section>
-        <section id="menu">
-
+        <section id="menu" class="nav-point">
+<!-- Skip Menu Button -->
+            <a href="#contact" class="skip-menu-btn flex-center">
+                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1654394913/arrow-down-sign-to-navigate_dp7hnu.png" alt="">
+            </a>
             <div class="container">
                 <h2 class="seciton-headline dancing-script-font">Unsere Auswahl</h2>
                 <div class="product-filter-cont flex-center">
@@ -2851,7 +3168,21 @@
 
 
                         <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="card-wrapper">
-                            <div class="card">
+                            <div class="card info">
+                               <div class="desc-txt">
+                                   <p>
+                                       Lorem ipsum chilli cheese crepe dolor sit amet, consectetur adipisicing elit. Autem deserunt nobis consectetur ut reiciendis amet, illo quo voluptas, molestias quasi inventore a omnis esse nulla at earum magni sed quia!
+                                   </p>
+                                   <div class="underline"></div>
+                                   <div class="ingr-components-cont flex-center">
+                                       <div class="ingr-component">
+                                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653705674/pngegg_49_yykuh3.png" alt="">
+                                       </div>
+                                       <div class="ingr-component">
+                                           <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653705509/pngegg_46_koughy.png" alt="">
+                                       </div>
+                                   </div>
+                               </div>
                                 <div class="card-img-top">
                                     <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652539190/breakfast-g8de177d01_1920_moixcr.jpg" alt="Card image cap">
                                 </div>
@@ -3058,7 +3389,7 @@
             </div>
 
         </section>
-        <section id="contact">
+        <section id="contact" class="nav-point">
             <div class="menu-shadow"></div>
             <div class="contact-cont flex-apart">
                 
@@ -3066,8 +3397,10 @@
             <h2 class="seciton-headline dancing-script-font">Fragen/Interesse?</h2>
             <div class="container">
                 <div class="contact-form">
-                    <div class="contact-img">
-                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652537068/kisspng-blueberry-pie-tart-bread-cake-blueberry-bread-west-point-5a88276c9dd6d6.1052028715188724286465_w6vbzu.png" alt="">
+                    <div data-tilt class="contact-img">
+<!--                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652537068/kisspng-blueberry-pie-tart-bread-cake-blueberry-bread-west-point-5a88276c9dd6d6.1052028715188724286465_w6vbzu.png" alt="">-->
+                        
+                        <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1654347925/kisspng-blueberry-pie-tart-bread-cake-blueberry-bread-west-point-5a88276c9dd6d6.1052028715188724286465_1_nf4ynb.png" alt="">
                     </div>
                     <form action="">
                         <ul>
@@ -3093,7 +3426,7 @@
                     <div class="newsletter-wrapper">
                         <div class="newsletter-txt-cont flex-center">
                             <div>
-                                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1653187926/news_xelrue.png" alt="">
+                                <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1654389501/news_2_orevcl.png" alt="">
                             </div>
                             <p>
                                 Trag Dich in unseren Newsletter ein, um immer <br> direkt von neuen Terminen zu erfahren.
@@ -3117,12 +3450,12 @@
             </div>
             </div>
         </section>
-        <section id="about">
+        <section id="about" class="nav-point">
             <div class="container">
                <h2 class="seciton-headline dancing-script-font">Über Uns</h2>
                 <div class="owners-cont">
                     <div class="owner">
-                        <div class="owner-img">
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="owner-img">
                             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652963832/Liebhaberei_Team_Bianca-525x600_rym5iy.png" alt="">
                         </div>
                         <div class="owner-info">
@@ -3135,7 +3468,7 @@
                         </div>
                     </div>
                     <div class="owner">
-                        <div class="owner-img">
+                        <div data-tilt data-tilt-glare data-tilt-max-glare="0.8" class="owner-img">
                             <img src="https://res.cloudinary.com/dxcrd5sos/image/upload/v1652963822/Liebhaberei_Team_Annette-525x600_m9tvoi.png" alt="">
                         </div>
                         <div class="owner-info">
@@ -3276,7 +3609,17 @@
         // ------------------------------------------- SCROLL MAGIC FUNCTIONS
         
         const controller = new ScrollMagic.Controller();
+        
+        
+        // ----- Navigation
 
+        // Removes last nav-underline when scrolling on footer
+        let sceneNavLastline = new ScrollMagic.Scene({
+            triggerElement: "footer",
+        })
+        .setClassToggle(".fiv-nav", "opacity-zero")
+        .addTo(controller)
+        
         
         // ----- Landing Page
         
@@ -3354,6 +3697,22 @@
         .setClassToggle(".bottom-png", "show")
         .addTo(controller)
         
+        
+        // ----- Products
+        
+        let sceneParrow = new ScrollMagic.Scene({
+            triggerElement: "#menu .container h2",
+        })
+        .setClassToggle(".skip-menu-btn", "show")
+        .addTo(controller)
+        
+        
+        let sceneParrow2 = new ScrollMagic.Scene({
+            triggerElement: ".show-more-btn",
+            offset: -350
+        })
+        .setClassToggle(".skip-menu-btn", "hide")
+        .addTo(controller)
  
         // ----- Contact
         
@@ -3395,16 +3754,34 @@
         // ----- About
         
         let sceneA = new ScrollMagic.Scene({
-            triggerElement: "#about .container .seciton-headline"
+            triggerElement: "#about .container .seciton-headline",
+            offset: -50
         })
-        .setClassToggle(".owner p", "show")
+        .setClassToggle(".owner:first-child img", "show")
+        .addTo(controller)
+        
+        
+        let sceneAscnd = new ScrollMagic.Scene({
+            triggerElement: ".owner:first-child img",
+            offset: -50
+        })
+        .setClassToggle(".owner:first-child p", "show")
         .addTo(controller)
         
         
         let sceneA2 = new ScrollMagic.Scene({
-            triggerElement: "#about .container .seciton-headline"
+            triggerElement: ".owner:first-child p",
+            offset: 0
         })
-        .setClassToggle(".owner img", "show")
+        .setClassToggle(".owner:nth-child(2) img", "show")
+        .addTo(controller)
+        
+        
+        let sceneA2scnd = new ScrollMagic.Scene({
+            triggerElement: ".owner:first-child p",
+            offset: 0
+        })
+        .setClassToggle(".owner:nth-child(2) p", "show")
         .addTo(controller)
         
         
@@ -3421,6 +3798,16 @@
             offset: -250
         })
         .setClassToggle(".cooperation-card", "show")
+        .addTo(controller)
+        
+        
+        // ----- Footer
+        
+        let sceneFicon = new ScrollMagic.Scene({
+            triggerElement: ".footer-contact-icons",
+            offset: -50
+        })
+        .setClassToggle("footer .container .logo", "show")
         .addTo(controller)
         
         
@@ -3447,6 +3834,23 @@
         }
 
 
+        // Scroll Active Navs
+        const navs = document.querySelectorAll(".active-nav");
+        const sections = document.querySelectorAll(".nav-point");
+        
+        function menuActive() {
+            let len = sections.length;
+            while(--len && window.scrollY + 50 < sections[len].offsetTop ){}
+            navs.forEach(ltx => ltx.classList.remove("active"));
+            navs[len].classList.add("active");
+        }
+        
+        menuActive();
+        window.addEventListener("scroll", menuActive);
+        
+        
+        
+        
         
         
         
@@ -3471,11 +3875,11 @@
         
         
         
-        
+// Active Nav - Source
+//        https://www.youtube.com/watch?v=AuwKkezuhS8
         
         
 //    PNG SOURCE 
-        
 //        https://www.pngegg.com/
         
     </script>
